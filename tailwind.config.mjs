@@ -9,6 +9,13 @@ export default {
   theme: {
   	extend: {
   		colors: {
+			front: {
+				primary: '#143429',
+				secondary: '#B37E56',
+				background: '#F0EDE8',
+				gray: '#E2DDD2',
+				text: '#333333'
+			},
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {
