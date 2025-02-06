@@ -11,7 +11,7 @@ import './FormReview.css'
 import { SelectImage } from "./SelectImage"
 import { useEffect, useState } from "react"
 
-export default function FormReview() {
+export default function FormReview({dictionary}) {
 
   const {
     register,
@@ -49,7 +49,7 @@ export default function FormReview() {
     <div className="flex flex-col gap-2 max-w-[500px]">
       <div className="flex flex-col items-center mb-[50px]">
         <BadgeCheck width={100} height={100} className="text-green-500" />
-        <h2 className="text-3xl text-front-text font-poppins font-bold">Gracias por tu reseña!</h2>
+        <h2 className="text-3xl text-front-text font-poppins font-bold">{dictionary.thank}</h2>
       </div>
 
       <Review review={storageReview} />
@@ -75,10 +75,10 @@ export default function FormReview() {
             setValue={setValue}
           />
 
-          <input {...register('name')} autoComplete="off" className="w-full h-fit font-poppins text-sm px-5 py-3 rounded-full bg-front-gray shadow-md border border-dashed focus:border-front-text border-transparent outline-none text-front-text" placeholder="Nombre" />
+          <input {...register('name')} autoComplete="off" className="w-full h-fit font-poppins text-sm px-5 py-3 rounded-full bg-front-gray shadow-md border border-dashed focus:border-front-text border-transparent outline-none text-front-text" placeholder={dictionary.form.namePlaceholder} />
         </div>
 
-        <textarea {...register("message")} autoComplete="off" className="p-5 rounded-3xl min-h-[220px] max-h-[300px] bg-front-gray shadow-md border border-dashed focus:border-front-text border-transparent outline-none text-front-text" placeholder="Escribe tu mensaje..." />
+        <textarea {...register("message")} autoComplete="off" className="p-5 rounded-3xl min-h-[220px] max-h-[300px] bg-front-gray shadow-md border border-dashed focus:border-front-text border-transparent outline-none text-front-text" placeholder={dictionary.form.messagePlaceboer} />
       </div>
       <div className="w-full flex items-center justify-between mt-3">
         <input {...register('stars')} type="number" min={1} max={5} className="hidden" />
@@ -100,14 +100,14 @@ export default function FormReview() {
           </button>
         </div>
 
-        <button type="submit" className="font-niconne text-2xl text-front-gray bg-front-primary px-8 py-1 rounded-full shadow-md hover:shadow-xl duration-200 hover:scale-105">Enviar</button>
+        <button type="submit" className="font-niconne text-2xl text-front-gray bg-front-primary px-8 py-1 rounded-full shadow-md hover:shadow-xl duration-200 hover:scale-105">{dictionary.form.sendBtn}</button>
       </div>
       
       {
         Object.keys(errors)?.length > 0 &&
         <span className="text-sm font-poppins text-red-500 flex items-star gap-1 p-5">
           <Ban width={18} height={18} />
-          Rellena el formulario adecuadamente para enviar tu reseña
+          {dictionary.form.errorMessage}
         </span>
       }
     </form>

@@ -29,7 +29,7 @@ export default function PaintStack({paints}) {
       id='top-paints'
     >
       {
-        paints.topPaints.map(paint => (
+        paints.map(paint => (
           <SwiperSlide key={paint._id} className='shadow-xl'>
             <Link href={addLangToURL(`/paint/${paint._id}`)} className='relative w-full h-full group'>
               <img

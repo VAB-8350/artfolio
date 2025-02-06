@@ -103,7 +103,7 @@ export default function useImagesInput(props) {
           onDragEnd={handleDragEnd}
           onDragStart={handleDragStart}
         >
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-4 flex-wrap">
 
             <SortableContext
               items={images}

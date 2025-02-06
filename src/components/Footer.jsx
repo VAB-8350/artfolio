@@ -5,13 +5,21 @@ const { getSocialMedias } = require('@/actions/SocialMedia')
 import { SelectSocialMediasIcons } from "@/components/SocialMediaIcons"
 import Link from 'next/link'
 import scrollToId from '@/utils/scrollToId'
+import { usePathname } from 'next/navigation'
+import { languages } from '@/config.json'
 
 export default function Footer() {
 
+  const pathname = usePathname()
+  const { primary, secondary } = languages
+  const lang = pathname.startsWith(`/${secondary}`) ? secondary : primary
+
   const [socialMedias, setSocialMedias] = useState([])
+  const [dictionary, setDictionary] = useState()
 
   useEffect(() => {
     getAllSocialMedias()
+    getLang()
   }, [])
 
   const getAllSocialMedias = async () => {
@@ -25,9 +33,14 @@ export default function Footer() {
     setSocialMedias(Object.entries(sm))
   }
 
+  const getLang = async () => {
+    const res = await import(`@/app/dictionaries/${lang}/footer.json`)
+    setDictionary(JSON.parse(JSON.stringify(res)))
+  }
+
   return (
     <footer className='flex flex-col md:flex-row md:justify-around bg-front-primary/80 backdrop-blur-sm shadow-xl mt-[30px] p-5'>
-      <div className='flex justify-between md:justify-around md:gap-3 items-center'>
+      <div className='flex justify-around md:gap-3 items-center'>
         <section className='border-r-[1px] md:border-front-background border-transparent md:pr-3'>
           <img src="/logo.png" alt="logo" className="h-5 object-contain" />
         </section>
@@ -46,7 +59,7 @@ export default function Footer() {
 
       <section className='mt-5 text-center border-t-[1px] border-front-background lg:border-transparent pt-5 md:pt-0 md:mt-0'>
         <p className='font-poppins font-extralight text-front-gray text-sm'>
-          Todas las obras creadas por <button onClick={() => scrollToId('about-me')} className='font-bold text-front-secondary underline hover:text-purple-500'>Romina Peruchin</button>
+          {dictionary?.alertLegal} <button onClick={() => scrollToId('about-me')} className='font-bold text-front-secondary underline hover:text-purple-500'>Romina Peruchin</button>
         </p>
       </section>
     </footer>

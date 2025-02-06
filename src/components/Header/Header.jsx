@@ -39,7 +39,7 @@ export default function header() {
     <header className='sticky top-0 left-0 right-0 z-50 flex gap-4 items-center justify-between w-full px-6 py-5 md:max-w-[1000px] md:w-[calc(100vw-100px)] mx-auto bg-front-primary/80
     md:mt-7 md:px-5 md:top-2 rounded-b-xl md:rounded-full md:py-3 backdrop-blur-sm shadow-xl'>
 
-      <Link href="/" className='outline-none'>
+      <Link href="/" className='outline-none hover:scale-110 duration-150'>
         <picture className='max-w-11 w-11 flex items-center justify-start'>
           <img src="/logo.png" alt="logo" className='h-5' />
         </picture>

@@ -34,7 +34,7 @@ export default async function HomeComponent({lang}) {
           <div className='flex flex-col gap-10' id='top-paints'>
             <TitleSection>{dictionary.paintsTitle}</TitleSection>
 
-            <PaintStack paints={paints} />
+            <PaintStack paints={paints?.topPaints} />
           </div>
         }
 
