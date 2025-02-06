@@ -1,12 +1,13 @@
 'use client'
 
-import { CircleHelp, CircleX, Dot, Languages, LetterText, MenuIcon, MessagesSquare, Palette, Tag } from 'lucide-react'
+import { CircleHelp, CircleX, Dot, Languages, LetterText, MenuIcon, MessagesSquare, Palette, Star, Tag } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import { getVisibleCategories } from '@/actions/Category'
 import { getSocialMedias } from '@/actions/SocialMedia'
 import Link from 'next/link'
 import './menu.css'
 import scrollToId from '@/utils/scrollToId'
+import useLanguageInURL from '@/hooks/useLanguageInURL'
 
 import {
   DropdownMenu,
@@ -25,15 +26,14 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion"
 
-import {
-  SelectSocialMediasIcons,
-} from "@/components/SocialMediaIcons"
-import { usePathname, useRouter } from 'next/navigation'
+import { SelectSocialMediasIcons } from "@/components/SocialMediaIcons"
+import { usePathname, useSearchParams } from 'next/navigation'
 
 export default function Menu({dictionary, lang}) {
 
   const pathname = usePathname()
-  const router = useRouter()
+  const params = useSearchParams()
+  const { addLangToURL } = useLanguageInURL()
 
   const [open, setOpen] = useState(false)
   const [categories, setCategories] = useState([])
@@ -75,7 +75,7 @@ export default function Menu({dictionary, lang}) {
       newPath = pathname.replace('/', `/${lang}`)
     }
 
-    return newPath
+    return newPath + `${params.size > 0 ? `?${params.toString()}` : ''}`
   }
 
   return (
@@ -103,7 +103,7 @@ export default function Menu({dictionary, lang}) {
                 {
                   categories.map((category, index) => (
                     <DropdownMenuItem key={index} className='hover:bg-black/10 cursor-pointer'>
-                      <Link href={`/list?category=${category._id}`} className='flex items-center'>
+                      <Link href={addLangToURL(`/list?category=${category._id}`)} className='flex items-center w-full h-full'>
                         <Dot width={16} height={16} />
                         {category.englishName}
                       </Link>
@@ -124,6 +124,12 @@ export default function Menu({dictionary, lang}) {
 
           <DropdownMenuItem className='focus:bg-black/10 focus:text-white cursor-pointer' onSelect={(e) => scrollToId('contact-me', e)}>
             <MessagesSquare /> {dropdown?.contact}
+          </DropdownMenuItem>
+
+          <DropdownMenuItem className='focus:bg-black/10 focus:text-white cursor-pointer'>
+            <Link href={addLangToURL(`/review`)} className='flex items-center gap-2'>
+              <Star width={16} height={16} /> {dropdown?.letReview}
+            </Link>
           </DropdownMenuItem>
         </DropdownMenuGroup>
 

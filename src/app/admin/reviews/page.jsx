@@ -100,7 +100,7 @@ export default function page() {
                     <h2 className='text-xl font-bold'>{review.name}</h2>
 
                     <div className='flex gap-3 items-center'>
-                      <Switch id={`review-visibility-${review._id}`} onCheckedChange={(status) => changeVisibility(review._id, status)} checked={review.visibility} disabled={loading} />
+                      <Switch id={`review-visibility-${review._id}`} onCheckedChange={(status) => changeVisibility(review._id, status)} checked={review.visible} disabled={loading} />
                       <label htmlFor={`review-visibility-${review._id}`} className={review.visible ? 'text-green-500' : 'text-red-500'}>
                         {
                           review.visible

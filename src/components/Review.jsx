@@ -4,14 +4,14 @@ import { colors } from '@/config.json'
 
 export default function Review({review}) {
 
-  const { stars, name, message } = review
+  const { stars, name, message, avatarOption } = review
 
   return (
     <article className='flex gap-5'>
       <img
-        src="https://picsum.photos/id/1002/400/300"
+        src={`/avatars/${avatarOption}.webp`}
         alt="review"
-        className='w-16 h-16 rounded-full shadow-md'
+        className='w-16 h-16 rounded-full shadow-md object-cover'
       />
 
       <div>

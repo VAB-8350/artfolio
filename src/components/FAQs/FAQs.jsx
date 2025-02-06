@@ -12,7 +12,7 @@ import './FAQs.css'
 export default function FAQs({faqs, lang}) {
 
   return (
-    <Accordion type="single" collapsible className="w-full grid grid-cols-1 lg:grid-cols-2 gap-3">
+    <Accordion type="single" collapsible className="w-full grid grid-cols-1 lg:grid-cols-2 gap-3 faqs-grid">
       {
         faqs.map(faq => (
           <AccordionItem value={faq._id} key={faq._id} className='border-none bg-white shadow-md rounded-xl faq-question'>

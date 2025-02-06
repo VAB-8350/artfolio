@@ -1,6 +1,6 @@
 import { Geist, Geist_Mono, Poppins, Niconne } from "next/font/google";
 import "./globals.css";
-import UserPageWrap from "@/components/UserPageWrap";
+import UserPageWrap from "@/components/UserPageWrap/UserPageWrap";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

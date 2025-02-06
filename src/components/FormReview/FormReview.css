@@ -1,0 +1,61 @@
+.star1 {
+  order: 1;
+}
+.star2 {
+  order: 2;
+}
+.star3 {
+  order: 3;
+}
+.star4 {
+  order: 4;
+}
+.star5 {
+  order: 5;
+}
+
+.star1:hover svg {
+  fill: var(--primary-color);
+  opacity: .7;
+  transform: scale(1.2);
+}
+
+.star2:hover ~ * svg{
+  opacity: .7;
+  fill: var(--primary-color);
+}
+.star2:hover  svg{
+  fill: var(--primary-color);
+  transform: scale(1.2);
+}
+
+.star3:hover ~ * svg{
+  opacity: .7;
+  fill: var(--primary-color);
+}
+.star3:hover  svg{
+  fill: var(--primary-color);
+  transform: scale(1.2);
+}
+
+.star4:hover ~ * svg{
+  opacity: .7;
+  fill: var(--primary-color);
+}
+.star4:hover  svg{
+  fill: var(--primary-color);
+  transform: scale(1.2);
+}
+
+.star5:hover ~ * svg{
+  opacity: .7;
+  fill: var(--primary-color);
+}
+.star5:hover  svg{
+  fill: var(--primary-color);
+  transform: scale(1.2);
+}
+
+.active ~ * svg, .active svg{
+  fill: var(--primary-color);
+}

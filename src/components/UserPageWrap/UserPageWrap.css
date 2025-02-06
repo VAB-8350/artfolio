@@ -1,0 +1,56 @@
+.animation-gradient {
+  position: absolute;
+  width: 1000px;
+  height: 1000px;
+  opacity: .6;
+  background: radial-gradient(circle 500px at 50% 50%,#b37e56de,transparent);
+  animation: moverInfinito 15s ease-in-out infinite;
+}
+
+@keyframes gradient {
+  0% {
+    top: 0;
+    left: 0;
+  }
+  10% {
+    top: 50%;
+    left: 50%;
+  }
+  20% {
+    top: 100%;
+    left: 0;
+  }
+  30% {
+    
+  }
+  40% {
+    
+  }
+  50% {
+    
+  }
+  60% {
+    
+  }
+  70% {
+    
+  }
+  80% {
+    
+  }
+  90% {
+    
+  }
+  100% {
+    
+  }
+}
+
+@keyframes moverInfinito {
+  0% { top: 50%; left: 50%; transform: translate(-50%, -50%); }
+  20% { top: 15%; left: 20%; transform: translate(-50%, -50%); }
+  40% { top: 30%; left: 80%; transform: translate(-50%, -50%); }
+  60% { top: 70%; left: 85%; transform: translate(-50%, -50%); }
+  80% { top: 85%; left: 25%; transform: translate(-50%, -50%); }
+  100% { top: 50%; left: 50%; transform: translate(-50%, -50%); }
+}

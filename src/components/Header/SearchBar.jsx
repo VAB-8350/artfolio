@@ -2,11 +2,13 @@
 import { useState } from 'react'
 import { Search } from 'lucide-react'
 import { useRouter } from 'next/navigation'
+import useLanguageInURL from '@/hooks/useLanguageInURL'
 
 export default function SearchBar({dictionary}) {
 
   // Hooks
   const router = useRouter()
+  const { addLangToURL } = useLanguageInURL()
 
   // State
   const [search, setSearch] = useState('')
@@ -14,7 +16,7 @@ export default function SearchBar({dictionary}) {
   // Methods
   const handleSubmit = (e) => {
     e.preventDefault()
-    router.push(`/list?search=${search}`)
+    router.push(addLangToURL(`/list?search=${search}`))
   }
 
   return (

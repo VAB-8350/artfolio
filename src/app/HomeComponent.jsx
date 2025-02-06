@@ -26,7 +26,7 @@ export default async function HomeComponent({lang}) {
       <Presentation job={dictionary.job} btn={dictionary.contactMe} />
 
       {/* Top Paints & About */}
-      <section className='flex flex-col gap-16 md:flex-row md:justify-around md:items-center'>
+      <section className='container mx-auto px-5 lg:px-8 flex flex-col gap-16 md:flex-row md:justify-around md:items-center'>
 
         {/* Top Paints */}
         {
@@ -62,7 +62,7 @@ export default async function HomeComponent({lang}) {
       }
 
 
-      <div className='flex flex-col lg:flex-row gap-10 mt-16 justify-around'>
+      <div className='container mx-auto px-5 lg:px-8 flex flex-col lg:flex-row gap-10 mt-16 justify-around'>
         {/* Reviews */}
         {
           reviews.length > 0 &&
@@ -87,7 +87,7 @@ export default async function HomeComponent({lang}) {
       {/* FAQ's */}
       {
         faqs.length > 0 &&
-        <section className='flex flex-col gap-10 mt-16' id='faqs'>
+        <section className='container mx-auto px-5 lg:px-8 flex flex-col gap-10 mt-16' id='faqs'>
           <TitleSection>{dictionary.faqsTitle}</TitleSection>
 
           <FAQs faqs={faqs} lang={lang} />

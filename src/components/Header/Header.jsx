@@ -5,10 +5,14 @@ import Menu from './Menu'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { languages } from '@/config.json'
+import scrollToId from '@/utils/scrollToId'
+
+import { useSearchParams } from 'next/navigation'
 
 export default function header() {
-
   const pathname = usePathname()
+  const params = useSearchParams()
+  const section = params.get('section')
 
   const [dictionary, setDictionary] = useState()
 
@@ -17,6 +21,13 @@ export default function header() {
 
   useEffect(() => {
     getLang()
+
+    // Scroll to section
+    if (section) {
+      setTimeout(() => {
+        scrollToId(section)
+      }, 500)
+    }
   }, [])
 
   const getLang = async () => {

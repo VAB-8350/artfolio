@@ -1,3 +1,5 @@
+import { languages } from '@/config.json'
+
 export default function scrollToId(id, e) {
 
   if (e) {
@@ -20,6 +22,16 @@ export default function scrollToId(id, e) {
       });
     } else {
       console.error('Elemento no encontrado:', targetElement ? 'user-page-wrap' : id);
+      const pathname = window.location.pathname
+      const { primary, secondary } = languages
+
+      if (pathname.startsWith(`/${secondary}`)) {
+        window.location.href = `/${secondary}?section=${id}`
+      } else if (pathname.startsWith(`/${primary}`)) {
+        window.location.href = `/${primary}?section=${id}`
+      } else {
+        window.location.href = `/${primary}?section=${id}`
+      }
     }
   }
 }

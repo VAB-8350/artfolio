@@ -1,4 +1,5 @@
 import mongoose from 'mongoose'
+import { avatarOptions } from '@/config.json'
 
 const schema = new mongoose.Schema({
   stars: {
@@ -25,7 +26,7 @@ const schema = new mongoose.Schema({
     type: Number,
     required: true,
     min: 1,
-    max: 50,
+    max: avatarOptions,
   },
   visible: {
     type: Boolean,

@@ -1,3 +1,8 @@
 .faq-question svg {
   color: #fff;
 }
+
+.faqs-grid > [data-state='closed'] {
+  background: transparent;
+  box-shadow: none;
+}

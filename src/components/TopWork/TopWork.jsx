@@ -1,48 +1,54 @@
 'use client'
-import { useEffect, useState } from 'react';
+import { useIsMobile } from "@/hooks/use-mobile"
+import useLanguageInURL from '@/hooks/useLanguageInURL'
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
 import 'swiper/css';
+import 'swiper/css/navigation';
 
 import './TopWork.css';
 
 // import required modules
-import { Navigation } from 'swiper/modules';
+import { Autoplay } from 'swiper/modules';
 import Link from 'next/link';
+import { useEffect, useState } from "react";
 
 export default function TopWork({works, lang}) {
 
-  const [isMobile, setIsMobile] = useState(true)
+  const [mounted, setMounted] = useState(false)
+  const isMobile = useIsMobile()
+  const { addLangToURL } = useLanguageInURL()
 
   useEffect(() => {
-    getSize()
-    window.addEventListener('resize', getSize)
-
-    return () => {
-      window.removeEventListener('resize', getSize)
-    }
-
-  }, [])
-
-  const getSize = () => setIsMobile(window.innerWidth <= 768)
+    setMounted(false)
+    setTimeout(() => {
+      setMounted(true)
+    }, 100)
+  }, [isMobile])
 
   return (
+    mounted &&
     <Swiper
       slidesPerView={isMobile ? 'auto' : 3}
-      centeredSlides={isMobile}
-      spaceBetween={20}
-      modules={isMobile ? [] : [Navigation]}
+      centeredSlides={true}
+      spaceBetween={isMobile ? 20 : 30}
+      modules={[Autoplay]}
+      loop={true}
+      autoplay={{
+        delay: 5000,
+        disableOnInteraction: true,
+      }}
       id='top-works'
     >
       {
         works.topWorks.map(work => (
           <SwiperSlide key={work._id}>
-            <Link href='#'>
-              <div className='relative shadow-lg rounded-[10px] overflow-hidden'>
-                <img src={work.images[0].url} alt={lang === 'es' ? work.titleSpanish : work.titleEnglish} />
+            <Link href={addLangToURL(`/paint/${work._id}`)}>
+              <div className='relative shadow-lg rounded-[10px] overflow-hidden group'>
+                <img src={work.images[0].url} alt={lang === 'es' ? work.titleSpanish : work.titleEnglish} className="group-hover:scale-110 duration-500 transition-scale" />
 
                 <span className='absolute bottom-0 right-0 inline-block w-full h-full z-20 bg-[radial-gradient(circle_80px_at_95%_100%,#00000090,transparent)]' />
                 <span className='absolute bottom-2 right-5 text-front-gray z-30 font-poppins text-base'>{work.year}</span>

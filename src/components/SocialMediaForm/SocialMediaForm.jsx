@@ -88,6 +88,7 @@ export default function SocialMediaForm({initialVal}) {
         <Card className='p-4'>
           <CardHeader className='p-0 mb-5'>
             <h3 className='text-center font-bold text-2xl'>Agrega las redes sociales que usas</h3>
+            <span className="text-center">Solo se mostrarán en los que completes.</span>
           </CardHeader>
 
           <form onSubmit={form.handleSubmit(onSubmit)} className='grid grid-cols-1 gap-4 md:grid-cols-2' id="social-medias">

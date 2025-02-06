@@ -3,6 +3,11 @@
 @tailwind utilities;
 
 body {
+  --primary-color: #143429;
+  --secondary-color: #B37E56;
+  --background-color: #F0EDE8;
+  --gray-color: #E2DDD2;
+  --text-color: #333333;
   font-family: Arial, Helvetica, sans-serif;
 }
 
