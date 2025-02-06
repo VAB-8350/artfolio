@@ -35,6 +35,18 @@ export const getPaint = async (id, populate) => {
   return JSON.parse(JSON.stringify(paint))
 }
 
+export const getPaintsByCategory = async (categoryId, excludePaintId) => {
+
+  try {
+    const paints = await Paint.find({ categories: categoryId, visible: true, _id: { $ne: excludePaintId } }).limit(5)
+    return JSON.parse(JSON.stringify(paints))
+
+  } catch (error) {
+    console.error('Error fetching paintings:', error)
+    throw error
+  }
+}
+
 export const addPaint = async (newPaint) => {
 
   const res = await validateSession()
@@ -51,6 +63,11 @@ export const addPaint = async (newPaint) => {
     return false
   }
 
+  revalidatePath('/')
+  revalidatePath('/en')
+  revalidatePath('/es')
+  revalidatePath(`/es/paint/*`)
+  revalidatePath(`/en/paint/*`)
   return addedPaint
 }
 
@@ -73,6 +90,8 @@ export const updatePaint = async (id, newPaint) => {
   revalidatePath('/')
   revalidatePath('/en')
   revalidatePath('/es')
+  revalidatePath(`/es/paint/*`)
+  revalidatePath(`/en/paint/*`)
   return addedPaint
 }
 
@@ -109,6 +128,11 @@ export const deletePaint = async (id) => {
     return false
   }
 
+  revalidatePath('/')
+  revalidatePath('/en')
+  revalidatePath('/es')
+  revalidatePath(`/es/paint/*`)
+  revalidatePath(`/en/paint/*`)
   return deletedPaint
 }
 
