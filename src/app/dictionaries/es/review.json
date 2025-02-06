@@ -1,0 +1,10 @@
+{
+  "title": "Que Opinas?",
+  "thank": "Gracias por tu reseña!",
+  "form": {
+    "namePlaceholder": "Nombre",
+    "messagePlaceboer": "Escribe tu mensaje...",
+    "sendBtn": "Enviar",
+    "errorMessage": "Por favor, rellena el formulario adecuadamente para enviar tu reseña"
+  }
+}

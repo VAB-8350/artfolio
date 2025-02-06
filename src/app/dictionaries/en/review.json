@@ -1,0 +1,10 @@
+{
+  "title": "Send Review",
+  "thank": "Thanks for your review!",
+  "form": {
+    "namePlaceholder": "Name",
+    "messagePlaceboer": "Write your message...",
+    "sendBtn": "Send",
+    "errorMessage": "Please fill the form correctly to send your review"
+  }
+}
