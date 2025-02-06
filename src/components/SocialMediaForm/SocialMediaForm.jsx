@@ -18,18 +18,7 @@ import { updateSocialMedias } from '@/actions/SocialMedia'
 import { SuccessToast, ErrorToast } from '@/components/Toasts'
 import { toast } from "sonner"
 import { LoaderCircle } from 'lucide-react'
-import {
-  X,
-  Facebook,
-  Instagram,
-  WhatsApp,
-  Telegram,
-  Linkedin,
-  Tiktok,
-  Youtube,
-  Threads,
-  Pinterest
-} from "../SocialMediaIcons"
+import { SelectSocialMediasIcons } from "../SocialMediaIcons"
 
 const socialMediasOptions = {
   facebook: {
@@ -92,54 +81,6 @@ export default function SocialMediaForm({initialVal}) {
     }
   }
 
-  const Icons = ({name}) => {
-    const size = 30
-    return (
-      <>
-        {
-          name === 'X'&&
-          <X width={size} height={size} />
-        }
-        {
-          name === 'Facebook'&&
-          <Facebook width={size} height={size} />
-        }
-        {
-          name === 'Instagram'&&
-          <Instagram width={size} height={size} />
-        }
-        {
-          name === 'WhatsApp'&&
-          <WhatsApp width={size} height={size} />
-        }
-        {
-          name === 'Telegram'&&
-          <Telegram width={size} height={size} />
-        }
-        {
-          name === 'LinkedIn'&&
-          <Linkedin width={size} height={size} />
-        }
-        {
-          name === 'TikTok'&&
-          <Tiktok width={size} height={size} />
-        }
-        {
-          name === 'YouTube'&&
-          <Youtube width={size} height={size} />
-        }
-        {
-          name === 'Threads'&&
-          <Threads width={size} height={size} />
-        }
-        {
-          name === 'Pinterest'&&
-          <Pinterest width={size} height={size} />
-        } 
-      </>
-    )
-  }
-
   return (
 
     <div>
@@ -166,7 +107,7 @@ export default function SocialMediaForm({initialVal}) {
                       </FormLabel>
                       
                       <div className='flex gap-2 items-center w-full'>
-                        <Icons name={value.name} />
+                        <SelectSocialMediasIcons name={value.name} size={30} />
 
                         <FormControl>
                           <Input disabled={isSubmitting} id={field.name} {...field} />

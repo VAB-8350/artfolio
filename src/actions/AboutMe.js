@@ -32,8 +32,10 @@ export const updateAboutUs = async (newAboutMe) => {
     return false
   }
 
-  revalidatePath('/admin/about-us')
-  revalidatePath('/*/about-us')
+  revalidatePath('/admin/about-me')
+  revalidatePath('/')
+  revalidatePath('/es')
+  revalidatePath('/en')
   return true
 
 } 

@@ -4,6 +4,7 @@ import { connectDB } from '@/utils/mongodb'
 import Review from '@/Models/Review'
 import MaxReviews from '@/Models/MaxReviews'
 import { validateSession } from './validateSession'
+import { revalidatePath } from 'next/cache'
 
 export const getAllReviews = async () => {
   const res = await validateSession()
@@ -58,6 +59,9 @@ export const changeReviewVisibility = async (id, status) => {
 
   await Review.findByIdAndUpdate(id, { visible: status })
 
+  revalidatePath('/')
+  revalidatePath('/en')
+  revalidatePath('/es')
   return true
 }
 
@@ -83,6 +87,10 @@ export const deleteReview = async (id) => {
 
   await connectDB()
   const review = await Review.findByIdAndDelete(id)
+
+  revalidatePath('/')
+  revalidatePath('/en')
+  revalidatePath('/es')
 
   return !!review
 }

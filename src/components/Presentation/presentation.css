@@ -1,0 +1,19 @@
+.presentation-section {
+  height: 100vh;
+  height: 100dvh;
+  
+  @media (max-width: 1024px) {
+    width: 100vw;
+  }
+}
+
+.mobile-image-presentation {
+  @media (max-width: 1024px) {
+    mask-image: linear-gradient(black 86%, transparent);
+  }
+
+  mask-image: url('/mask.png');
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+}

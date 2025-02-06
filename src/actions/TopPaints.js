@@ -3,6 +3,7 @@
 import { connectDB } from '@/utils/mongodb'
 import TopPaints from '@/Models/TopPaints'
 import { validateSession } from './validateSession'
+import { revalidatePath } from 'next/cache'
 
 export const getTopPaints = async () => {
   await connectDB()
@@ -35,5 +36,8 @@ export const uploadTopPaint = async (newTop) => {
     return false
   }
 
+  revalidatePath('/')
+  revalidatePath('/en')
+  revalidatePath('/es')
   return addedPaint
 }

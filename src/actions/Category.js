@@ -20,6 +20,13 @@ export const getCategory = async (id) => {
   return JSON.parse(JSON.stringify(category))
 }
 
+export const getVisibleCategories = async () => {
+  await connectDB()
+  const categories = await Category.find({ visible: true })
+
+  return JSON.parse(JSON.stringify(categories))
+}
+
 export const updateCategory = async (id, updateCategory) => {
   const res = await validateSession()
   if (!res.success) return res

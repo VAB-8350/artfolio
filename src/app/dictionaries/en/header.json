@@ -1,0 +1,11 @@
+{
+  "searchPlaceholder": "Search...",
+  "dropdown": {
+    "about": "About Me",
+    "category": "Categories",
+    "works": "Some Works",
+    "faqs": "FAQ's",
+    "contact": "Contact",
+    "language": "Languages"
+  }
+}

@@ -1,4 +1,7 @@
 /** @type {import('tailwindcss').Config} */
+
+import { colors } from './src/config.json'
+
 export default {
     darkMode: ["class"],
     content: [
@@ -8,13 +11,17 @@ export default {
   ],
   theme: {
   	extend: {
+			fontFamily: {
+				poppins: ['var(--font-poppins)'],
+				niconne: ['var(--font-niconne)'],
+			},
   		colors: {
 			front: {
-				primary: '#143429',
-				secondary: '#B37E56',
-				background: '#F0EDE8',
-				gray: '#E2DDD2',
-				text: '#333333'
+				primary:colors.primary,
+				secondary:colors.secondary,
+				background:colors.background,
+				gray:colors.gray,
+				text:colors.text
 			},
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',

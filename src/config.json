@@ -1,0 +1,13 @@
+{
+  "languages": {
+    "primary": "en",
+    "secondary": "es"
+  },
+  "colors": {
+    "primary": "#143429",
+    "secondary": "#B37E56",
+    "background": "#F0EDE8",
+    "gray": "#E2DDD2",
+    "text": "#333333"
+  }
+}

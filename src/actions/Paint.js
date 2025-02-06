@@ -7,6 +7,7 @@ import TopWorks from '@/Models/TopWorks'
 import TopPaints from '@/Models/TopPaints'
 import { uploadTopPaint } from './TopPaints'
 import { uploadTopWork } from './TopWorks'
+import { revalidatePath } from 'next/cache'
 
 export const getAllPaints = async (populate) => {
   await connectDB()
@@ -69,6 +70,9 @@ export const updatePaint = async (id, newPaint) => {
     return false
   }
 
+  revalidatePath('/')
+  revalidatePath('/en')
+  revalidatePath('/es')
   return addedPaint
 }
 

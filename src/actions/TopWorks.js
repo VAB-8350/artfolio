@@ -3,6 +3,7 @@
 import { connectDB } from '@/utils/mongodb'
 import TopWorks from '@/Models/TopWorks'
 import { validateSession } from './validateSession'
+import { revalidatePath } from 'next/cache'
 
 export const getTopWorks = async () => {
   await connectDB()
@@ -35,5 +36,8 @@ export const uploadTopWork = async (newTop) => {
     return false
   }
 
+  revalidatePath('/')
+  revalidatePath('/en')
+  revalidatePath('/es')
   return addedPaint
 }

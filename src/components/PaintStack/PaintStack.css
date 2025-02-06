@@ -1,0 +1,18 @@
+#top-paints .swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+}
+
+#top-paints.swiper {
+  width: 300px;
+  height: 441px;
+}
+
+@media (min-width: 992px) {
+  #top-paints.swiper {
+    width: 350px;
+    height: 500px;
+  }
+}

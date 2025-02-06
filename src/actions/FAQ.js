@@ -4,6 +4,7 @@
 import { connectDB } from '@/utils/mongodb'
 import FAQ from '@/Models/FAQ'
 import { validateSession } from './validateSession'
+import { revalidatePath } from 'next/cache'
 
 export const getFAQ = async () => {
   await connectDB()
@@ -26,8 +27,10 @@ export const updateFAQ = async (id, newFAQ) => {
     return false
   }
 
+  revalidatePath('/')
+  revalidatePath('/en')
+  revalidatePath('/es')
   return true
-
 }
 
 export const addFAQ = async (newFAQ) => {
@@ -46,6 +49,9 @@ export const addFAQ = async (newFAQ) => {
     return false
   }
 
+  revalidatePath('/')
+  revalidatePath('/en')
+  revalidatePath('/es')
   return addedFAQ
 }
 
@@ -56,5 +62,8 @@ export const deleteFAQ = async (id) => {
   await connectDB()
   const faq = await FAQ.findByIdAndDelete(id)
 
+  revalidatePath('/')
+  revalidatePath('/en')
+  revalidatePath('/es')
   return !!faq
 }
