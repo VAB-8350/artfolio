@@ -1,6 +1,6 @@
 'use client'
 
-import { CircleHelp, CircleX, Dot, Languages, LetterText, MenuIcon, MessagesSquare, Palette, Star, Tag } from 'lucide-react'
+import { BookImage, CircleHelp, CircleX, Dot, Languages, LetterText, MenuIcon, MessagesSquare, Palette, Star, Tag } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import { getVisibleCategories } from '@/actions/Category'
 import { getSocialMedias } from '@/actions/SocialMedia'
@@ -124,6 +124,12 @@ export default function Menu({dictionary, lang}) {
 
           <DropdownMenuItem className='focus:bg-black/10 focus:text-white cursor-pointer' onSelect={(e) => scrollToId('contact-me', e)}>
             <MessagesSquare /> {dropdown?.contact}
+          </DropdownMenuItem>
+
+          <DropdownMenuItem className='focus:bg-black/10 focus:text-white cursor-pointer' onSelect={(e) => scrollToId('contact-me', e)}>
+            <Link href={addLangToURL(`/list`)} className='flex items-center gap-2'>
+              <BookImage width={16} height={16} /> {dropdown?.allPaints}
+            </Link>
           </DropdownMenuItem>
 
           <DropdownMenuItem className='focus:bg-black/10 focus:text-white cursor-pointer'>

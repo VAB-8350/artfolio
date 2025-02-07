@@ -2,9 +2,10 @@
 
 import { connectDB } from '@/utils/mongodb'
 import Paint from '@/Models/Paint'
-import { validateSession } from './validateSession'
+import Category from '@/Models/Category'
 import TopWorks from '@/Models/TopWorks'
 import TopPaints from '@/Models/TopPaints'
+import { validateSession } from './validateSession'
 import { uploadTopPaint } from './TopPaints'
 import { uploadTopWork } from './TopWorks'
 import { revalidatePath } from 'next/cache'
@@ -47,6 +48,34 @@ export const getPaintsByCategory = async (categoryId, excludePaintId) => {
   }
 }
 
+export const searchPaintings = async ({ search, lang, category }) => {
+  const titleField = lang === 'es' ? 'titleSpanish' : 'titleEnglish'
+  const categoryField = lang === 'es' ? 'spanishName' : 'englishName'
+
+  const query = {}
+
+  if (search) {
+    query.$or = [
+      { [titleField]: { $regex: search, $options: 'i' } }, // Buscar en el título
+      {
+        categories: {
+          $in: await Category.find({
+            [categoryField]: { $regex: search, $options: 'i' }
+          }).distinct('_id')
+        }
+      } // Buscar en las categorías por nombre
+    ]
+  }
+
+  if (category) {
+    query.categories = category
+  }
+
+  const paints = await Paint.find(query).populate('categories')
+
+  return JSON.parse(JSON.stringify(paints))
+}
+
 export const addPaint = async (newPaint) => {
 
   const res = await validateSession()
@@ -54,8 +83,10 @@ export const addPaint = async (newPaint) => {
 
   await connectDB()
   let addedPaint
+  let paintId
   try {
     const paint = new Paint(newPaint)
+    paintId = paint._id
     await paint.validate()
     await paint.save()
     addedPaint = true
@@ -66,8 +97,10 @@ export const addPaint = async (newPaint) => {
   revalidatePath('/')
   revalidatePath('/en')
   revalidatePath('/es')
-  revalidatePath(`/es/paint/*`)
-  revalidatePath(`/en/paint/*`)
+  revalidatePath(`/es/paint/${paintId}`)
+  revalidatePath(`/en/paint/${paintId}`)
+  revalidatePath(`/es/list/*`)
+  revalidatePath(`/en/list/*`)
   return addedPaint
 }
 
@@ -90,8 +123,10 @@ export const updatePaint = async (id, newPaint) => {
   revalidatePath('/')
   revalidatePath('/en')
   revalidatePath('/es')
-  revalidatePath(`/es/paint/*`)
-  revalidatePath(`/en/paint/*`)
+  revalidatePath(`/es/paint/${id}`)
+  revalidatePath(`/en/paint/${id}`)
+  revalidatePath(`/es/list/*`)
+  revalidatePath(`/en/list/*`)
   return addedPaint
 }
 
@@ -131,8 +166,10 @@ export const deletePaint = async (id) => {
   revalidatePath('/')
   revalidatePath('/en')
   revalidatePath('/es')
-  revalidatePath(`/es/paint/*`)
-  revalidatePath(`/en/paint/*`)
+  revalidatePath(`/es/paint/${id}`)
+  revalidatePath(`/en/paint/${id}`)
+  revalidatePath(`/es/list/*`)
+  revalidatePath(`/en/list/*`)
   return deletedPaint
 }
 
