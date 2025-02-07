@@ -57,7 +57,7 @@ export default async function page({params}) {
             <div className="grid grid-cols-3 grid-rows-3 gap-6 w-full h-full">
               {/* Caja 1 - Grande */}
               <div className="col-span-2 row-span-2 rounded-2xl flex items-center justify-center text-white text-4xl font-bold shadow-2xl hover:scale-[1.05] hover:rotate-1 transition-all duration-300 overflow-hidden">
-                <img src={paint.images[0].url} alt="logo" className="w-full h-full object-cover" />
+                <img src={paint.images[paint.images.length - 3].url} alt="logo" className="w-full h-full object-cover" />
               </div>
 
               {/* Caja 2 - Pequeña Glassmorphism */}
@@ -67,12 +67,12 @@ export default async function page({params}) {
 
               {/* Caja 3 - Mediana Vertical */}
               <div className="col-span-1 row-span-2 rounded-2xl flex items-center justify-center text-white text-2xl font-semibold shadow-xl hover:scale-[1.05] hover:rotate-1 transition-all">
-                <img src={paint.images[1].url} alt="logo" className="w-full h-full object-cover rounded-2xl" />
+                <img src={paint.images[paint.images.length - 2].url} alt="logo" className="w-full h-full object-cover rounded-2xl" />
               </div>
 
               {/* Caja 4 - Mediana con efecto Neón */}
               <div className="col-span-2 rounded-2xl flex items-center justify-center text-white text-2xl font-semibold shadow-xl hover:scale-[1.05] transition-all">
-                <img src={paint.images[2].url} alt="logo" className="w-full h-full object-cover rounded-2xl" />
+                <img src={paint.images[paint.images.length - 1].url} alt="logo" className="w-full h-full object-cover rounded-2xl" />
               </div>
             </div>
           </div>
