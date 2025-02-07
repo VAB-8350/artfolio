@@ -14,7 +14,7 @@ export default async function page({params}) {
     <div className="min-h-full">
 
       <div className="lg:container lg:mx-auto lg:px-8 flex flex-col lg:flex-row">
-        <section className="h-[80vh] lg:h-[60vh] lg:w-full overflow-hidden">
+        <section className="aspect-square lg:h-[60vh] lg:w-full overflow-hidden">
           <ImagesOfPaintPage images={paint.images} />
         </section>
 
@@ -40,43 +40,6 @@ export default async function page({params}) {
           <span className="self-end text-sm text-front-text">{paint.year}</span>
         </section>
       </div>
-      
-      {/* <div className="container mx-auto grid grid-cols-4 grid-rows-3 gap-6 w-full h-[80vh] p-8">
-        <div className="col-span-2 row-span-2 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-3xl p-6 flex items-center justify-center text-white text-3xl font-bold shadow-xl hover:scale-[1.03] transition">
-          🌊 Ocean Vibes
-        </div>
-
-        <div className="bg-gradient-to-br from-green-400 to-teal-500 rounded-3xl p-6 flex items-center justify-center text-white text-2xl font-semibold shadow-lg hover:scale-[1.05] transition">
-          🌿 Nature Escape
-        </div>
-
-        <div className="bg-gradient-to-br from-yellow-400 to-orange-500 rounded-3xl p-6 flex items-center justify-center text-white text-2xl font-semibold shadow-lg hover:scale-[1.05] transition">
-          ☀️ Warm Glow
-        </div>
-
-        <div className="col-span-2 bg-gradient-to-br from-red-500 to-pink-600 rounded-3xl p-6 flex items-center justify-center text-white text-3xl font-bold shadow-xl hover:scale-[1.03] transition">
-          🔥 Passion Energy
-        </div>
-
-        <div className="bg-gradient-to-br from-purple-500 to-blue-600 rounded-3xl p-6 flex items-center justify-center text-white text-2xl font-semibold shadow-lg hover:scale-[1.05] transition">
-          💜 Tranquility
-        </div>
-
-        <div className="col-span-2 row-span-2 bg-gradient-to-br from-gray-700 to-black rounded-3xl p-6 flex items-center justify-center text-white text-3xl font-bold shadow-xl hover:scale-[1.03] transition">
-          🌌 Dark Mode
-        </div>
-
-        <div className="bg-gradient-to-br from-cyan-500 to-blue-400 rounded-3xl p-6 flex items-center justify-center text-white text-2xl font-semibold shadow-lg hover:scale-[1.05] transition">
-          🌊 Cool Breeze
-        </div>
-
-        <div className="bg-gradient-to-br from-rose-400 to-red-500 rounded-3xl p-6 flex items-center justify-center text-white text-2xl font-semibold shadow-lg hover:scale-[1.05] transition">
-          🌺 Floral Bloom
-        </div>
-      </div> */}
-
-
-      
 
       <div className="container mx-auto flex justify-around items-center mt-10">
         {

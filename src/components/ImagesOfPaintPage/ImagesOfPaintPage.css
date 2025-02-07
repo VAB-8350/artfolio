@@ -1,13 +1,8 @@
 #paint-images {
   width: 100%;
   height: 100%;
-}
-
-@media (min-width: 768px) {
-  #paint-images .swiper-wrapper {
-    justify-content: center;
-}
-
+  overflow: hidden;
+  border-radius: 16px;
 }
 
 #paint-images .swiper-slide {
@@ -19,11 +14,10 @@
   }
 }
 
-
 #paint-images .swiper-slide img {
-  display: block;
-  width: 100%;
-  object-fit: contain;
+  
+  aspect-ratio: 1/1;
+  object-fit: cover;
 }
 
 #paint-images .paint-images-zoom > div {
@@ -31,4 +25,5 @@
   height: 100%;
   display: flex;
   align-items: center;
+  justify-content: center;
 }

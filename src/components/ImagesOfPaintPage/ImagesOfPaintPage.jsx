@@ -11,6 +11,7 @@ import './ImagesOfPaintPage.css'
 import 'react-inner-image-zoom/lib/InnerImageZoom/styles.min.css';
 import { useEffect, useState } from "react";
 
+
 export default function ImagesOfPaintPage({images}) {
 
   const [mounted, setMounted] = useState(false)
@@ -28,14 +29,20 @@ export default function ImagesOfPaintPage({images}) {
     <Swiper
       slidesPerView={isMobile ? 'auto' : 1}
       centeredSlides={true}
-      spaceBetween={isMobile ? 10 : 0}
-      loop={isMobile}
+      spaceBetween={isMobile ? 10 : 30}
+      loop={true}
       id='paint-images'
     >
       {
         images?.map(paint => (
-          <SwiperSlide key={paint.url} className='flex h-full items-center'>
-            <InnerImageZoom src={paint.url} zoomSrc={paint.url} alt='Image of paint' className='bg-black/10 backdrop-blur-sm rounded-2xl h-full w-full paint-images-zoom' />
+          <SwiperSlide key={paint.url} className='flex items-center'>
+            <InnerImageZoom
+              src={paint.url}
+              alt='Image of paint'
+              className='bg-black/10 backdrop-blur-sm rounded-2xl w-full h-full paint-images-zoom'
+              zoomType="click"
+              fullscreenOnMobile={true}
+            />
           </SwiperSlide>
         ))
       }
