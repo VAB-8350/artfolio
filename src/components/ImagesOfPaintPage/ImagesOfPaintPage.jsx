@@ -39,7 +39,7 @@ export default function ImagesOfPaintPage({images}) {
             <InnerImageZoom
               src={paint.url}
               alt='Image of paint'
-              className='bg-black/10 backdrop-blur-sm rounded-2xl w-full h-full paint-images-zoom'
+              className='bg-black/10 backdrop-blur-sm rounded-2xl w-full lg:h-full aspect-square paint-images-zoom'
               zoomType="click"
               fullscreenOnMobile={true}
             />
