@@ -6,5 +6,15 @@
   "worksTitle": "Algunas Obras",
   "reviewsTitle": "Opiniones",
   "contactMeTitle": "Hablemos",
-  "faqsTitle": "Preguntas"
+  "faqsTitle": "Preguntas",
+  "contactForm": {
+    "email": "Email",
+    "emailPlaceholder": "romina@ejemplo.com",
+    "message": "Mensaje",
+    "messagePlaceboer": "Me ha gustado tu arte...",
+    "sendBtn": "Enviar",
+    "emailError": "Correo electrónico inválido",
+    "messageError": "El mensaje debe tener al menos 10 caracteres",
+    "successMessage": "Mensaje enviado!"
+  }
 }

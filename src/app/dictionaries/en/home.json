@@ -6,5 +6,15 @@
   "worksTitle": "Some Works",
   "reviewsTitle": "Reviews",
   "contactMeTitle": "Talk to me",
-  "faqsTitle": "FAQ's"
+  "faqsTitle": "FAQ's",
+  "contactForm": {
+    "email": "Email",
+    "emailPlaceholder": "romina@example.com",
+    "message": "Message",
+    "messagePlaceboer": "Your art is my inspiration...",
+    "sendBtn": "Send",
+    "emailError": "Invalid email",
+    "messageError": "Message must be at least 10 characters",
+    "successMessage": "Message sent!"
+  }
 }

@@ -4,6 +4,7 @@ import TitleSection from '@/components/TitleSection'
 import TopWorks from '@/components/TopWork/TopWork'
 import Review from '@/components/Review'
 import FAQs from '@/components/FAQs/FAQs'
+import ContactForm from '@/components/ContactForm/ContactForm'
 
 import { getAboutMe } from '@/actions/AboutMe'
 import { getTopPaints } from '@/actions/TopPaints'
@@ -80,7 +81,9 @@ export default async function HomeComponent({lang}) {
         }
         
         <section className='' id='contact-me'>
-            <TitleSection>{dictionary.contactMeTitle}</TitleSection>
+          <TitleSection>{dictionary.contactMeTitle}</TitleSection>
+
+           <ContactForm dictionary={dictionary.contactForm} />
         </section>
       </div>
 

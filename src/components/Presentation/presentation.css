@@ -12,7 +12,8 @@
     mask-image: linear-gradient(black 86%, transparent);
   }
 
-  mask-image: url('/mask.png');
+  -webkit-mask-image: url('/presentationImages/mask1.png');
+  mask-image: url('/presentationImages/mask1.png');
   mask-size: contain;
   mask-repeat: no-repeat;
   mask-position: center;
