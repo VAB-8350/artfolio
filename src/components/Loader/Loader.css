@@ -1,4 +1,4 @@
-.loader {
+.loader-admin {
   width: 20px;
   height: 12px;
   display: block;
@@ -10,8 +10,8 @@
   box-sizing: border-box;
   animation: animloader 0.6s 0.3s ease infinite alternate;
 }
-.loader::after,
-.loader::before {
+.loader-admin::after,
+.loader-admin::before {
   content: '';  
   box-sizing: border-box;
   width: 20px;
@@ -23,7 +23,7 @@
   right: 110%;
   animation: animloader  0.6s ease infinite alternate;
 }
-.loader::after {
+.loader-admin::after {
   left: 110%;
   right: auto;
   animation-delay: 0.6s;
