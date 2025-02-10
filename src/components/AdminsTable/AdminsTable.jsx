@@ -81,7 +81,7 @@ export default function AdminsTable({setInitialVal, open}) {
               <TableCell className="text-right">
                 <div className='flex items-center gap-4 justify-end'>
                   <DialogTrigger asChild>
-                    <button className='hover:text-slate-500 duration-300 outline-none' onClick={() => changeInitialVal(admin.name, admin.email, admin.role, admin._id)}>
+                    <button className='hover:text-blue-500 duration-300 outline-none' onClick={() => changeInitialVal(admin.name, admin.email, admin.role, admin._id)}>
                       <Pencil width={17} height={17} />
                     </button>
                   </DialogTrigger>

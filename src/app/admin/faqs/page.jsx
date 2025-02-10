@@ -79,7 +79,7 @@ export default function page() {
             faqs.map((faq, index) => (
               <div key={faq._id} className='flex gap-3 items-start w-full h-full'>
                 <DialogTrigger asChild>
-                  <button className='mt-4 hover:text-cyan-500 transition-colors duration-200' disabled={loading} onClick={() => setInitialVal(faq)}>
+                  <button className='mt-4 hover:text-blue-500 transition-colors duration-200' disabled={loading} onClick={() => setInitialVal(faq)}>
                     <Edit2 size={18} />
                   </button>
                 </DialogTrigger>

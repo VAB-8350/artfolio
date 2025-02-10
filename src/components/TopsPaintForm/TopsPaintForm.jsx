@@ -109,7 +109,7 @@ export default function TopsPaintForm({view}) {
 
       <div className='w-full flex flex-col'>
 
-        <h3 className='text-start font-bold text-2xl'>Todas las obras</h3>
+        <h3 className='text-start font-bold text-2xl'>Todas las obras no agregadas</h3>
 
         {/* Search */}
         <div className='max-w-[400px] w-full mx-auto my-4'>
@@ -135,7 +135,7 @@ export default function TopsPaintForm({view}) {
                   action={
                     <button
                       aria-label='Agregar'
-                      className='hover:text-purple-500 hover:bg-white/50 rounded-full p-4 transition duration-300'
+                      className='hover:bg-green-500/50 rounded-full p-4 transition duration-300'
                       onClick={() => {
                         if (!topWorksIds.includes(paint._id)) {
                           setTopWorks([...topWorks, paint])
@@ -190,7 +190,7 @@ export default function TopsPaintForm({view}) {
                       setTopWorksIds(topWorksIds.filter((id) => id !== topWork._id))
                     }}
                     aria-label='Eliminar'
-                    className='hover:text-red-500 hover:bg-white/50 rounded-full p-4 transition duration-300'
+                    className='hover:bg-red-500/50 rounded-full p-4 transition duration-300'
                   >
                     <Trash2 width={40} height={40} />
                   </button>

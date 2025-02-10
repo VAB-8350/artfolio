@@ -101,7 +101,7 @@ export default function page() {
 
                       <div className='flex items-center gap-3'>
                         <DialogTrigger asChild>
-                          <button disabled={loading} className='text-white hover:text-cyan-500 duration-300 outline-none disabled:opacity-50 disabled:text-slate-500' onClick={() => setInitialValue(category)}>
+                          <button disabled={loading} className='text-white hover:text-blue-500 duration-300 outline-none disabled:opacity-50 disabled:text-slate-500' onClick={() => setInitialValue(category)}>
                             <Pencil width={17} height={17} />
                           </button>
                         </DialogTrigger>

@@ -41,7 +41,7 @@ export default function DeletPaint({paint, setFilteredPaints, setPaints, setLoad
   return (
     <button
       aria-label='Eliminar'
-      className='hover:text-red-500 hover:bg-white/50 rounded-full p-4 transition duration-300'
+      className='hover:bg-red-500/50 rounded-full p-4 transition duration-300'
       onClick={removePaint}
     >
       <Trash2 width={40} height={40} />

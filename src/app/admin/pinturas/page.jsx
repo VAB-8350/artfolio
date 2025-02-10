@@ -99,7 +99,7 @@ export default function page() {
                   <Link
                     href={`/admin/pinturas/edit/${paint._id}`}
                     aria-label='Editar'
-                    className='hover:text-cyan-500 hover:bg-white/50 rounded-full p-4 transition duration-300'
+                    className=' hover:bg-blue-500/50 rounded-full p-4 transition duration-300'
                   >
                     <Pencil width={40} height={40} />
                   </Link>
