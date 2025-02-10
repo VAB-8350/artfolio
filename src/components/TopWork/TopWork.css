@@ -4,13 +4,6 @@
   margin-top: 32px;
 }
 
-@media (min-width: 768px) {
-  #top-works .swiper-wrapper {
-    justify-content: center;
-}
-
-}
-
 #top-works .swiper-slide {
   width: 70%;
 

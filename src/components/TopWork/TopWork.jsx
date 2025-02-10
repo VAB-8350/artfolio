@@ -31,7 +31,7 @@ export default function TopWork({works, lang}) {
   return (
     mounted &&
     <Swiper
-      slidesPerView={isMobile ? 'auto' : 3}
+      slidesPerView='auto'
       centeredSlides={true}
       spaceBetween={isMobile ? 20 : 30}
       modules={[Autoplay]}
