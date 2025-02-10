@@ -127,7 +127,7 @@ export default function TopsPaintForm({view}) {
             {
               !loading &&
               filteredPaints.map((paint) => (
-                paint.visible &&
+                paint.visible && !topWorksIds.includes(paint._id) &&
                 <AdminProduct
                   key={paint._id}
                   title={paint.titleSpanish}
@@ -137,7 +137,7 @@ export default function TopsPaintForm({view}) {
                       aria-label='Agregar'
                       className='hover:text-purple-500 hover:bg-white/50 rounded-full p-4 transition duration-300'
                       onClick={() => {
-                        if (topWorks.length < 5 && !topWorksIds.includes(paint._id)) {
+                        if (!topWorksIds.includes(paint._id)) {
                           setTopWorks([...topWorks, paint])
                           setTopWorksIds([...topWorksIds, paint._id])
                         }
