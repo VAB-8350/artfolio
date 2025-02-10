@@ -96,9 +96,6 @@ export default function NewMenu({dictionary, lang}) {
       newPath = pathname.replace('/', `/${lang}`)
     }
 
-    // setOpen(false)
-    // router.push(newPath + `${params.size > 0 ? `?${params.toString()}` : ''}`)
-
     return newPath + `${params.size > 0 ? `?${params.toString()}` : ''}`
   }
 
@@ -118,13 +115,13 @@ export default function NewMenu({dictionary, lang}) {
         className={`${open ? 'open-dropdown-menu' : 'close-dropdown-menu'} absolute top-14 right-0 bg-front-primary/80 backdrop-blur-sm shadow-xl rounded-xl p-4 z-50 min-w-[300px]`}
       >
         <div className="border-b-[1px] border-front-gray pb-2 mb-2">
-          <button onClick={() => scroll('about-me')} className="flex items-center gap-2 w-full hover:bg-black/20 px-3 py-1 rounded-md">
+          <button onClick={() => scroll('about-me')} className="flex items-center gap-2 w-full hover:bg-black/10 duration-200 px-3 py-1 rounded-md font-poppins text-base">
             <LetterText size={16} /> {dropdown?.about}
           </button>
 
           <Accordion type="single" collapsible className="w-full">
             <AccordionItem value="item-1" className='border-none'>
-              <AccordionTrigger className='hover:no-underline hover:bg-black/10 dropdown px-3 py-1 rounded-md'>
+              <AccordionTrigger className='hover:no-underline hover:bg-black/10 duration-200 dropdown px-3 py-1 rounded-md font-poppins text-base'>
                 <div className='flex items-center gap-2'>
                   <Tag width={16} height={16} /> {dropdown?.category}
                 </div>
@@ -132,7 +129,7 @@ export default function NewMenu({dictionary, lang}) {
               <AccordionContent className='pl-3 pb-0'>
                 {
                   categories.map(category => (
-                    <Link key={category._id} onClick={() => setOpen(false)} href={addLangToURL(`/list?category=${category._id}`)} className='flex items-center gap-2 w-full hover:bg-black/20 px-3 py-1 rounded-md'>
+                    <Link key={category._id} onClick={() => setOpen(false)} href={addLangToURL(`/list?category=${category._id}`)} className='flex items-center gap-2 w-full hover:bg-black/10 duration-200 px-3 py-1 rounded-md'>
                       <Dot width={16} height={16} />
                       {category.englishName}
                     </Link>
@@ -142,23 +139,23 @@ export default function NewMenu({dictionary, lang}) {
             </AccordionItem>
           </Accordion>
 
-          <button onClick={() => scroll('top-works')} className="flex items-center gap-2 w-full hover:bg-black/20 px-3 py-1 rounded-md">
+          <button onClick={() => scroll('top-works')} className="flex items-center gap-2 w-full hover:bg-black/10 duration-200 px-3 py-1 rounded-md font-poppins text-base">
             <Palette size={16} /> {dropdown?.works}
           </button>
 
-          <button onClick={() => scroll('faqs')} className="flex items-center gap-2 w-full hover:bg-black/20 px-3 py-1 rounded-md">
+          <button onClick={() => scroll('faqs')} className="flex items-center gap-2 w-full hover:bg-black/10 duration-200 px-3 py-1 rounded-md font-poppins text-base">
             <CircleHelp size={16} /> {dropdown?.faqs}
           </button>
 
-          <button onClick={() => scroll('contact-me')} className="flex items-center gap-2 w-full hover:bg-black/20 px-3 py-1 rounded-md">
+          <button onClick={() => scroll('contact-me')} className="flex items-center gap-2 w-full hover:bg-black/10 duration-200 px-3 py-1 rounded-md font-poppins text-base">
             <MessagesSquare size={16} /> {dropdown?.contact}
           </button>
 
-          <Link onClick={() => setOpen(false)} href={addLangToURL(`/list`)} className="flex items-center gap-2 w-full hover:bg-black/20 px-3 py-1 rounded-md">
+          <Link onClick={() => setOpen(false)} href={addLangToURL(`/list`)} className="flex items-center gap-2 w-full hover:bg-black/10 duration-200 px-3 py-1 rounded-md font-poppins text-base">
             <BookImage size={16} /> {dropdown?.allPaints}
           </Link>
 
-          <Link onClick={() => setOpen(false)} href={addLangToURL(`/review`)} className="flex items-center gap-2 w-full hover:bg-black/20 px-3 py-1 rounded-md">
+          <Link onClick={() => setOpen(false)} href={addLangToURL(`/review`)} className="flex items-center gap-2 w-full hover:bg-black/10 duration-200 px-3 py-1 rounded-md font-poppins text-base">
             <Star size={16} /> {dropdown?.letReview}
           </Link>
         </div>
@@ -167,7 +164,7 @@ export default function NewMenu({dictionary, lang}) {
           {
             socialMedias.map((socialMedia, index) => (
               socialMedia[1].url.length > 0 &&
-              <Link key={index} href={socialMedia[1].url} target='_blank' className="flex items-center gap-2 w-full hover:bg-black/20 px-3 py-1 rounded-md">
+              <Link key={index} href={socialMedia[1].url} target='_blank' className="flex items-center gap-2 w-full hover:bg-black/10 duration-200 px-3 py-1 rounded-md font-poppins text-base">
                 <SelectSocialMediasIcons name={socialMedia[1].name} size={16} />
                 {socialMedia[1].name}
               </Link>
@@ -176,15 +173,15 @@ export default function NewMenu({dictionary, lang}) {
         </div>
 
         <div className="pl-3">
-          <h3 className="flex items-center gap-2 font-bold mb-2"><Languages size={16} /> Languages</h3>
+          <h3 className="flex items-center gap-2 font-bold mb-2 font-poppins text-base"><Languages size={16} /> Languages</h3>
 
           <div className="flex gap-2">
-            <a href={changeToLanguage(languages.secondary)} className={`flex items-center gap-2 disabled:cursor-not-allowed px-3 py-1 rounded-md hover:bg-black/20 ${lang === languages.secondary ? 'bg-black/40' : ''}`}>
+            <a href={changeToLanguage(languages.secondary)} className={`flex items-center gap-2 disabled:cursor-not-allowed px-3 py-1 rounded-md hover:bg-black/10 duration-200 font-poppins text-base ${lang === languages.secondary ? 'bg-black/40' : ''}`}>
               <img src="/flagLanguage/Flag_Spain.svg" alt="flag-spain" className='w-5 rounded-sm' />
               Español
             </a>
 
-            <a href={changeToLanguage(languages.primary)} className={`flex items-center gap-2 disabled:cursor-not-allowed px-3 py-1 rounded-md hover:bg-black/20 ${lang === languages.primary ? 'bg-black/40' : ''}`}>
+            <a href={changeToLanguage(languages.primary)} className={`flex items-center gap-2 disabled:cursor-not-allowed px-3 py-1 rounded-md hover:bg-black/10 duration-200 font-poppins text-base ${lang === languages.primary ? 'bg-black/40' : ''}`}>
               <img src="/flagLanguage/Flag_United_Kingdom.svg" alt="flag-english" className='w-5 rounded-sm' />
               English
             </a>
