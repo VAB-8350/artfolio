@@ -4,12 +4,13 @@ import { useEffect, useState } from 'react'
 const { getSocialMedias } = require('@/actions/SocialMedia')
 import { SelectSocialMediasIcons } from "@/components/SocialMediaIcons"
 import Link from 'next/link'
-import scrollToId from '@/utils/scrollToId'
+import useScrollToId from '@/hooks/useScrollToId'
 import { usePathname } from 'next/navigation'
 import { languages } from '@/config.json'
 
 export default function Footer() {
 
+  const { scrollToId } = useScrollToId()
   const pathname = usePathname()
   const { primary, secondary } = languages
   const lang = pathname.startsWith(`/${secondary}`) ? secondary : primary

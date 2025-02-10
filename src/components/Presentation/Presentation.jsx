@@ -1,9 +1,23 @@
 'use client'
+import { useEffect } from 'react'
 import './presentation.css'
-
-import scrollToId from '@/utils/scrollToId'
+import useScrollToId from '@/hooks/useScrollToId'
+import { useSearchParams } from 'next/navigation'
 
 export default function Presentation({job, btn}) {
+
+  const { scrollToId } = useScrollToId()
+  const params = useSearchParams()
+  const section = params.get('section')
+
+  useEffect(() => {
+    // Scroll to section
+    if (section) {
+      setTimeout(() => {
+        scrollToId(section)
+      }, 500)
+    }
+  }, [])
 
   return (
     <div className='-ml-[calc((100vw-100%)/2)] -mt-[92px] md:-mt-[110px] lg:ml-0 lg:-mt-[110px]'>

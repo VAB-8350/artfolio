@@ -1,6 +1,77 @@
-.dropdown {
+.dropdown > svg {
+  color: white;
+}
+.open-dropdown-menu {
+  animation: mobile-show .3s ease-in-out forwards;
+}
 
-  svg {
-    color: #fff;
+.close-dropdown-menu {
+  animation: remove 0s linear .2s forwards, mobile-hidden .2s ease-in-out forwards;
+}
+
+@media (min-width: 768px) {
+  .open-dropdown-menu {
+    animation: show .3s ease-in-out forwards;
+  }
+  
+  .close-dropdown-menu {
+    animation: remove 0s linear .2s forwards, hidden .2s ease-in-out forwards;
+  }
+}
+
+@keyframes hidden {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+}
+
+@keyframes remove {
+  from {
+    display: block;
+  }
+  to {
+    display: none;
+  }
+}
+
+@keyframes show {
+  from {
+    display: none;
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    display: block;
+  }
+}
+
+@keyframes mobile-show {
+  from {
+    display: none;
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+    display: block;
+  }
+}
+
+@keyframes mobile-hidden {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(100%);
   }
 }
