@@ -106,8 +106,10 @@ export default function NewMenu({dictionary, lang}) {
 
   return (
     <div className="relative flex items-center text-white">
-      <button id="dropdown-btn" onClick={(e) => setOpen(!open)}>
-        {open ? <CircleX className='text-red-400' /> : <MenuIcon className='text-front-gray' />}
+      <button id="dropdown-btn" className="outline-none" onClick={() => setOpen(!open)}>
+        <div id="nav-icon4" className={`max-w-11 w-11 ${open ? 'open' : ''}`}>
+          <span /><span /><span />
+        </div>
       </button>
 
       <div
@@ -121,7 +123,7 @@ export default function NewMenu({dictionary, lang}) {
 
           <Accordion type="single" collapsible className="w-full">
             <AccordionItem value="item-1" className='border-none'>
-              <AccordionTrigger className='hover:no-underline hover:bg-black/10 duration-200 dropdown px-3 py-1 rounded-md font-poppins text-base'>
+              <AccordionTrigger className='hover:no-underline hover:bg-black/10 duration-200 dropdown px-3 py-1 rounded-md font-poppins text-base font-normal'>
                 <div className='flex items-center gap-2'>
                   <Tag width={16} height={16} /> {dropdown?.category}
                 </div>
