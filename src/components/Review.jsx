@@ -26,7 +26,7 @@ export default function Review({review}) {
           <Star width={14} height={14} fill={stars >=5 ? colors.secondary : 'transparent'} stroke={colors.secondary} />
         </div>
 
-        <p className='font-poppins text-xs text-front-text mt-2 max-w-[400px]'>{message}</p>
+        <p className='font-poppins text-xs text-front-text mt-2 max-w-[400px] text-pretty'>{message}</p>
       </div>
     </article>
   )

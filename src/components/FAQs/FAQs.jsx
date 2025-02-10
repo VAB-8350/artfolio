@@ -28,7 +28,7 @@ export default function FAQs({faqs, lang}) {
               </div>
             </AccordionTrigger>
 
-            <AccordionContent className='pl-5 mt-4 text-front-text'>
+            <AccordionContent className='px-5 mt-4 text-front-text text-pretty'>
               {lang === 'es' ? faq.answerSpanish : faq.answerEnglish}
             </AccordionContent>
           </AccordionItem>

@@ -57,7 +57,7 @@ export default function TopWork({works, lang}) {
                 <h3 className='font-poppins text-xl text-front-text mt-2 line-clamp-1 overflow-hidden text-ellipsis'>
                   { lang === 'es' ? work.titleSpanish : work.titleEnglish }
                 </h3>
-                <p className='font-poppins text-sm text-front-text font-extralight line-clamp-3 overflow-hidden text-ellipsis'>
+                <p className='font-poppins text-sm text-front-text font-extralight line-clamp-3 overflow-hidden text-ellipsis text-pretty'>
                   {lang === 'es' ? work.descriptionSpanish : work.descriptionEnglish}
                 </p>
               </div>

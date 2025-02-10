@@ -44,7 +44,7 @@ export default async function HomeComponent({lang}) {
           about.aboutEnglish.length > 0 &&
           <div className='flex flex-col gap-7' id='about-me'>
             <TitleSection>{dictionary.aboutTitle}</TitleSection>
-            <p className='font-poppins text-sm whitespace-pre-line max-w-[600px] text-front-text'>
+            <p className='font-poppins text-sm whitespace-pre-line max-w-[600px] text-front-text text-pretty'>
               {lang === 'es' ? about.aboutSpanish : about.aboutEnglish}
             </p>
           </div>
