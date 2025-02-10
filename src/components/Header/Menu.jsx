@@ -131,7 +131,7 @@ export default function NewMenu({dictionary, lang}) {
               <AccordionContent className='pl-3 pb-0'>
                 {
                   categories.map(category => (
-                    <Link key={category._id} onClick={() => setOpen(false)} href={addLangToURL(`/list?category=${category._id}`)} className='flex items-center gap-2 w-full hover:bg-black/10 duration-200 px-3 py-1 rounded-md'>
+                    <Link key={category._id} onClick={() => setOpen(false)} href={addLangToURL(`/list?category=${category._id}`)} className='flex items-center gap-2 w-full hover:bg-black/10 duration-200 px-3 py-1 rounded-md font-poppins text-base'>
                       <Dot width={16} height={16} />
                       {category.englishName}
                     </Link>
