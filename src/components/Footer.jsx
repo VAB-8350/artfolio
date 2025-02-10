@@ -43,14 +43,16 @@ export default function Footer() {
     <footer className='flex flex-col md:flex-row md:justify-around bg-front-primary/80 backdrop-blur-sm shadow-xl mt-[30px] p-5'>
       <div className='flex justify-around md:gap-3 items-center'>
         <section className='border-r-[1px] md:border-front-background border-transparent md:pr-3'>
-          <img src="/logo.png" alt="logo" className="h-5 object-contain" />
+          <Link href='/' className='flex hover:scale-110 duration-200'>
+            <img src="/logo.png" alt="logo" className="h-5 object-contain" />
+          </Link>
         </section>
 
         <section className='flex gap-2 flex-wrap max-w-1/2'>
           {
             socialMedias.map(socialMedia => (
               socialMedia[1].url.length > 0 &&
-              <Link href={socialMedia[1].url} key={socialMedia[1].name} target='_blank' className='flex items-center gap-2 text-background'>
+              <Link href={socialMedia[1].url} key={socialMedia[1].name} target='_blank' className='flex items-center gap-2 text-background hover:scale-125 duration-200'>
                 <SelectSocialMediasIcons name={socialMedia[1].name} size={24} />
               </Link>
             ))
@@ -60,7 +62,11 @@ export default function Footer() {
 
       <section className='mt-5 text-center border-t-[1px] border-front-background lg:border-transparent pt-5 md:pt-0 md:mt-0'>
         <p className='font-poppins font-extralight text-front-gray text-sm'>
-          {dictionary?.alertLegal} <button onClick={() => scrollToId('about-me')} className='font-bold text-front-secondary underline hover:text-purple-500'>Romina Peruchin</button>
+          {dictionary?.createdBy} <button onClick={() => scrollToId('about-me')} className='font-bold text-front-secondary underline hover:text-purple-500'>Romina Peruchin</button>
+        </p>
+
+        <p className='font-poppins font-extralight text-front-gray text-sm mt-1'>
+          {dictionary?.webCreatedBy} <Link href='https://victorbarilin.com' target='_blank' className='font-bold text-front-secondary underline hover:text-purple-500'>Andres Barilin</Link>
         </p>
       </section>
     </footer>

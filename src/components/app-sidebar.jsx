@@ -17,6 +17,7 @@ import {
   SidebarRail,
 } from "@/components/ui/sidebar"
 import { ModeToggle } from "./mode-toggle"
+import Link from "next/link"
 
 // This is sample data.
 const data = {
@@ -100,6 +101,10 @@ export function AppSidebar({
         <div className="flex items-center gap-2 justify-end">
           <ModeToggle />
         </div>
+
+        <p className="text-sm text-center">
+          Web creada por <Link href='https://victorbarilin.com' target='_blank' className='font-bold underline hover:text-purple-500'>Andres Barilin</Link>
+        </p>
       </SidebarFooter>
       <SidebarRail />
     </Sidebar>)
