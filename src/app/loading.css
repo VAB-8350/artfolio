@@ -1,0 +1,45 @@
+
+.loader {
+  --width: 52px;
+  --height: 114px;
+
+  width: var(--width);
+  height: var(--height);
+  border-radius: 5px 5px 20px 20px;
+  position: relative;
+  background: var(--primary-color) radial-gradient(circle 5px at 50% 85%, white 100%, transparent 0);
+}
+.loader:before , .loader:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: var(--width);
+  height: var(--height);
+  border-radius: 5px 5px 20px 20px;
+  background: #FFF;
+  opacity: .9;
+  transform: rotate(60deg);
+  transform-origin: 50% 85%;
+  z-index: -2;
+  animation: rotate2 1s infinite linear alternate;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.loader:before {
+  background-color: var(--secondary-color);
+}
+
+.loader:after {
+  background-color: white;
+  animation: rotate 1s infinite linear alternate;
+  opacity: 1;
+}
+@keyframes rotate {
+  0% , 20% { transform: rotate(0deg) }
+  80% , 100% { transform: rotate(30deg) }
+}
+@keyframes rotate2 {
+  0% , 20% { transform: rotate(0deg) }
+  80% , 100% { transform: rotate(60deg) }
+}
