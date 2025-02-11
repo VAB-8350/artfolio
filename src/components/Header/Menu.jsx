@@ -6,7 +6,7 @@ import { getSocialMedias } from '@/actions/SocialMedia'
 import { BookImage, CircleHelp, CircleX, Dot, Languages, LetterText, MenuIcon, MessagesSquare, Palette, Star, Tag } from 'lucide-react'
 import useLanguageInURL from '@/hooks/useLanguageInURL'
 import { SelectSocialMediasIcons } from "@/components/SocialMediaIcons"
-import { usePathname, useRouter, useSearchParams } from 'next/navigation'
+import { usePathname, useSearchParams } from 'next/navigation'
 import useScrollToId from '@/hooks/useScrollToId'
 import { languages } from '@/config.json'
 
@@ -28,7 +28,6 @@ export default function NewMenu({dictionary, lang}) {
   
   const pathname = usePathname()
   const params = useSearchParams()
-  const router = useRouter()
   const { scrollToId } = useScrollToId()
 
   const [open, setOpen] = useState(false)
@@ -162,9 +161,9 @@ export default function NewMenu({dictionary, lang}) {
           </Link>
         </div>
 
-        <div className="border-b-[1px] border-front-gray pb-2 mb-2">
+        <div className="border-b-[1px] border-front-gray pb-2 mb-2 grid grid-cols-2 gap-1">
           {
-            socialMedias.map((socialMedia, index) => (
+            socialMedias?.map((socialMedia, index) => (
               socialMedia[1].url.length > 0 &&
               <Link key={index} href={socialMedia[1].url} target='_blank' className="flex items-center gap-2 w-full hover:bg-black/10 duration-200 px-3 py-1 rounded-md font-poppins text-base">
                 <SelectSocialMediasIcons name={socialMedia[1].name} size={16} />
