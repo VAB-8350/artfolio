@@ -27,11 +27,12 @@ export default function FormReview({dictionary}) {
   })
 
   const [mounted, setMounted] = useState(false)
-  const [storageReview, setStorageReview] = useState(JSON.parse(window.localStorage.getItem('review')))
+  const [storageReview, setStorageReview] = useState('')
 
   useEffect(() => {
     setValue('avatarOption', Math.floor(Math.random() * 9) + 1)
     setMounted(true)
+    setStorageReview(JSON.parse(window.localStorage.getItem('review')))
   }, [])
 
   const onSubmit =  async (data) => {
