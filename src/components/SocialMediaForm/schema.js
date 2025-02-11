@@ -62,24 +62,39 @@ export const formSchema = z.object({
   youtube: z.object({
     name: z.string(),
     url: z.string()
-      .refine(url => url === '' || /^(https?:\/\/)?(www\.)?(youtube\.com\/(channel|c|user)\/|youtu\.be\/)[A-Za-z0-9_.-]+\/?$/.test(url), {
-        message: 'Debe ser una URL válida de canal de YouTube o estar vacío.',
-      }),
+      .refine(
+      (url) =>
+        url === "" ||
+        /^(https?:\/\/)?(www\.)?(youtube\.com\/(channel|c|user|@)[A-Za-z0-9_-]+\/?)$/.test(url),
+      {
+        message: "Debe ser una URL válida de canal de YouTube o estar vacío.",
+      }
+    ),
   }),
 
   threads: z.object({
     name: z.string(),
     url: z.string()
-      .refine(url => url === '' || /^(https?:\/\/)?(www\.)?threads\.net\/[A-Za-z0-9_.-]+\/?$/.test(url), {
-        message: 'Debe ser una URL válida de perfil de Threads o estar vacío.',
-      }),
+    .refine(
+      (url) =>
+        url === "" ||
+        /^(https?:\/\/)?(www\.)?threads\.net\/@?[A-Za-z0-9_.-]+\/?$/.test(url),
+      {
+        message: "Debe ser una URL válida de perfil de Threads o estar vacío.",
+      }
+    ),
   }),
 
   pinterest: z.object({
     name: z.string(),
     url: z.string()
-      .refine(url => url === '' || /^(https?:\/\/)?(www\.)?pinterest\.com\/[A-Za-z0-9_.-]+\/?$/.test(url), {
-        message: 'Debe ser una URL válida de perfil de Pinterest o estar vacío.',
-      }),
+      .refine(
+      (url) =>
+        url === "" ||
+        /^(https?:\/\/)?([a-z]{2}\.)?pinterest\.com\/[A-Za-z0-9_-]+\/?$/.test(url),
+      {
+        message: "Debe ser una URL válida de perfil de Pinterest o estar vacío.",
+      }
+    ),
   }),
 });

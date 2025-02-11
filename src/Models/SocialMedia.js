@@ -102,10 +102,14 @@ const schema = new mongoose.Schema({
       type: String,
       trim: true,
       validate: {
-        validator: function(v) {
-          return v === '' || /^(https?:\/\/)?(www\.)?(youtube\.com\/(channel|c|user)\/|youtu\.be\/)[A-Za-z0-9_.-]+\/?$/.test(v);
+        validator: function (v) {
+          return (
+            v === "" ||
+            /^(https?:\/\/)?(www\.)?(youtube\.com\/(channel|c|user|@)[A-Za-z0-9_-]+\/?$)/.test(v)
+          );
         },
-        message: props => `${props.value} no es una URL válida de canal de YouTube o un string vacío.`,
+        message: (props) =>
+          `${props.value} no es una URL válida de canal de YouTube o un string vacío.`,
       },
     },
   },
@@ -115,10 +119,14 @@ const schema = new mongoose.Schema({
       type: String,
       trim: true,
       validate: {
-        validator: function(v) {
-          return v === '' || /^(https?:\/\/)?(www\.)?threads\.net\/[A-Za-z0-9_.-]+\/?$/.test(v);
+        validator: function (v) {
+          return (
+            v === "" ||
+            /^(https?:\/\/)?(www\.)?threads\.net\/@?[A-Za-z0-9_.-]+\/?$/.test(v)
+          );
         },
-        message: props => `${props.value} no es una URL válida de perfil de Threads o un string vacío.`,
+        message: (props) =>
+          `${props.value} no es una URL válida de perfil de Threads o un string vacío.`,
       },
     },
   },
@@ -128,10 +136,14 @@ const schema = new mongoose.Schema({
       type: String,
       trim: true,
       validate: {
-        validator: function(v) {
-          return v === '' || /^(https?:\/\/)?(www\.)?pinterest\.com\/[A-Za-z0-9_.-]+\/?$/.test(v);
+        validator: function (v) {
+          return (
+            v === "" ||
+            /^(https?:\/\/)?([a-z]{2}\.)?pinterest\.com\/[A-Za-z0-9_-]+\/?$/.test(v)
+          );
         },
-        message: props => `${props.value} no es una URL válida de perfil de Pinterest o un string vacío.`,
+        message: (props) =>
+          `${props.value} no es una URL válida de perfil de Pinterest o un string vacío.`,
       },
     },
   },

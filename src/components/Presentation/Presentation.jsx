@@ -48,7 +48,6 @@ export default function Presentation({job, btn}) {
           </button>
         </div>
       </section>
-
     </div>
   )
 }

@@ -12,6 +12,7 @@ import { getSocialMedias } from '@/actions/SocialMedia'
 import { getMonthlyInserts } from '@/actions/Paint'
 import Loader from '@/components/Loader/Loader'
 import { EmptyStatus } from '@/components/EmptyStatus'
+import { SelectSocialMediasIcons } from "@/components/SocialMediaIcons"
 
 export default function Page() {
 
@@ -127,12 +128,20 @@ export default function Page() {
         <h3 className='text-center text-xl font-bold'>Redes Sociales y estadisticas</h3>
 
           <div className="grid place-content-center h-full pb-4" >
-            <div className='flex gap-2 items-center mb-3'>
-              <Link target='blank' href={socialMedias?.facebook ?? '#'}><Facebook className='p-2 rounded-lg w-14 h-14 hover:bg-white/20 duration-300' /></Link>
-              <Link target='blank' href={socialMedias?.instagram ?? '#'}><Instagram className='p-2 rounded-lg w-14 h-14 hover:bg-white/20 duration-300' /></Link>
-              <Link target='blank' href={socialMedias?.whatsapp ?? '#'}><MessageCircle className='p-2 rounded-lg w-14 h-14 hover:bg-white/20 duration-300' /></Link>
+            <div className='grid grid-cols-4 gap-3 items-center mb-3 justify-center flex-wrap px-3'>
+              {
+                Object.entries(socialMedias).map(social => (
+                  social[1].url?.length > 0 &&
+                  <Link target='blank' href={social[1].url} key={social[0]} className='hover:scale-125 duration-200'>
+                    <SelectSocialMediasIcons name={social[1].name} size={30} />
+                  </Link>
+                ))
+              }
             </div>
-            <Button asChild className='font-bold text-lg'>
+          </div>
+          
+          <div className='flex justify-center'>
+            <Button asChild className='font-bold text-lg w-fit px-5'>
               <Link target='blank' href='#'><ChartLine /> Clarity</Link>
             </Button>
           </div>
