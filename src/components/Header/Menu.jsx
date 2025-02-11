@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react"
 import { getVisibleCategories } from '@/actions/Category'
 import { getSocialMedias } from '@/actions/SocialMedia'
-import { BookImage, CircleHelp, CircleX, Dot, Languages, LetterText, MenuIcon, MessagesSquare, Palette, Star, Tag } from 'lucide-react'
+import { BookImage, CircleHelp, Dot, Languages, LayoutDashboard, LetterText, MessagesSquare, Palette, Star, Tag } from 'lucide-react'
 import useLanguageInURL from '@/hooks/useLanguageInURL'
 import { SelectSocialMediasIcons } from "@/components/SocialMediaIcons"
 import { usePathname, useSearchParams } from 'next/navigation'
@@ -154,6 +154,10 @@ export default function NewMenu({dictionary, lang}) {
 
           <Link onClick={() => setOpen(false)} href={addLangToURL(`/list`)} className="flex items-center gap-2 w-full hover:bg-black/10 duration-200 px-3 py-1 rounded-md font-poppins text-base">
             <BookImage size={16} /> {dropdown?.allPaints}
+          </Link>
+
+          <Link onClick={() => setOpen(false)} href={addLangToURL(`/gallery`)} className="flex items-center gap-2 w-full hover:bg-black/10 duration-200 px-3 py-1 rounded-md font-poppins text-base">
+            <LayoutDashboard size={16} /> {dropdown?.gallery}
           </Link>
 
           <Link onClick={() => setOpen(false)} href={addLangToURL(`/review`)} className="flex items-center gap-2 w-full hover:bg-black/10 duration-200 px-3 py-1 rounded-md font-poppins text-base">
