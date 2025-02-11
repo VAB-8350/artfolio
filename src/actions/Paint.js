@@ -23,6 +23,19 @@ export const getAllPaints = async (populate) => {
   return JSON.parse(JSON.stringify(paints))
 }
 
+export const getVisiblePaints = async (populate) => {
+  await connectDB()
+  let paints
+  
+  if (populate) {
+    paints = await Paint.find({visible: true}).populate('categories')
+  } else {
+    paints = await Paint.find({visible: true})
+  }
+
+  return JSON.parse(JSON.stringify(paints))
+}
+
 export const getPaint = async (id, populate) => {
   await connectDB()
   let paint
