@@ -19,7 +19,7 @@ export default async function page({params}) {
         {
           paints.map((paint) => (
             paint.images.map((image) => (
-              <div className='w-full h-full object-cover rounded-xl mb-5 overflow-hidden shadow-lg' key={image.url}>
+              <div className='w-full h-full object-cover rounded-xl mb-5 overflow-hidden shadow-lg hover:shadow-2xl duration-300' key={image.url}>
                 <OpenImage image={image} lang={lang} paint={paint} >
                   <img
                     src={image.url}
