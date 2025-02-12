@@ -1,36 +1,26 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Artfolio
 
-## Getting Started
+## Que es Artfolio?
 
-First, run the development server:
+Artfolio es un portfolio de arte que permite a los usuarios visualizar sus trabajos de arte, con una interfaz amigable y fácil de usar, ademas cuenta con un panel de administración para gestionar sus obras de arte.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Plataformas Necesarias
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Debes tener una cuenta en:
+- [Cloudinary](https://cloudinary.com/)
+- [MongoDB Atlas](https://www.mongodb.com/atlas)
+- [Vercel](https://vercel.com/)
+- [google-auth](https://console.cloud.google.com/)
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Instalación
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 1. Crear un Fork del repositorio.
+![image](https://github.com/user-attachments/assets/8f67fd73-d64d-420e-b165-f8d5b1e5b37e)
 
-## Learn More
+Luego clona el Fork en tu local.
 
-To learn more about Next.js, take a look at the following resources:
+### 3. Configuracion de MongoDB Atlas.
+Crear la cuenta y monta el servidor que quede mas cercano a tu ubicacion objetivo para tener la menor latencia posible.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 4. Obtener credenciales de google-auth.
+### 5. Obtener las credenciales de Cloudinary.
