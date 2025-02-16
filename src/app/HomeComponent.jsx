@@ -55,7 +55,7 @@ export default async function HomeComponent({lang}) {
       {/* Top Works */}
       {
         works.topWorks.length > 0 &&
-        <section className='flex flex-col gap-10 items-center' id='top-works'>
+        <section className='flex flex-col gap-10 items-center mt-8 lg:mt-40' id='top-works'>
           <TitleSection>{dictionary.worksTitle}</TitleSection>
 
           <TopWorks works={works} lang={lang} />
@@ -63,7 +63,7 @@ export default async function HomeComponent({lang}) {
       }
 
 
-      <div className='container mx-auto px-5 lg:px-8 flex flex-col lg:flex-row gap-10 mt-16 justify-around'>
+      <div className='container mx-auto px-5 lg:px-8 flex flex-col lg:flex-row gap-10 mt-16 lg:mt-40 justify-around'>
         {/* Reviews */}
         {
           reviews.length > 0 &&
@@ -90,7 +90,7 @@ export default async function HomeComponent({lang}) {
       {/* FAQ's */}
       {
         faqs.length > 0 &&
-        <section className='container mx-auto px-5 lg:px-8 flex flex-col gap-10 mt-16' id='faqs'>
+        <section className='container mx-auto px-5 lg:px-8 flex flex-col gap-10 mt-16 lg:mt-40' id='faqs'>
           <TitleSection>{dictionary.faqsTitle}</TitleSection>
 
           <FAQs faqs={faqs} lang={lang} />
