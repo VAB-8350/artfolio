@@ -1,6 +1,7 @@
 {
   "title": "Send Review",
   "thank": "Thanks for your review!",
+  "limitMessage": "Oops! Sorry, the maximum review limit has been reached",
   "form": {
     "namePlaceholder": "Name",
     "messagePlaceboer": "Write your message...",

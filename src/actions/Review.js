@@ -119,8 +119,6 @@ export const updateMaxReviews = async (newMaxReviews) => {
 }
 
 export const getMaxReviews = async () => {
-  const res = await validateSession()
-  if (!res.success) return res
 
   await connectDB()
   const maxReviews = await MaxReviews.findOne()
