@@ -2,6 +2,15 @@ import { getPaint, getPaintsByCategory } from "@/actions/Paint"
 import ImagesOfPaintPage from "@/components/ImagesOfPaintPage/ImagesOfPaintPage"
 import PaintStack from "@/components/PaintStack/PaintStack"
 
+export async function generateMetadata({params: {lang, id}}) {
+  const paint = await getPaint(id, false)
+
+  return {
+    title: lang === 'es' ? paint.titleSpanish : paint.titleEnglish,
+    description: lang === 'es' ? paint.descriptionSpanish : paint.descriptionEnglish,
+  }
+}
+
 export default async function page({params}) {
 
   const { lang, id } = await params

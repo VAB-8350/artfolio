@@ -2,7 +2,15 @@ import FormReview from "@/components/FormReview/FormReview";
 import PaintStack from '@/components/PaintStack/PaintStack'
 import { getTopPaints } from '@/actions/TopPaints'
 import { getMaxReviews, getQuantityReviews } from "@/actions/Review";
-import { FileStack, Frown, TriangleAlert } from "lucide-react";
+import { TriangleAlert } from "lucide-react";
+
+export async function generateMetadata({params: {lang}}) {
+  const dictionary = await import(`@/app/dictionaries/${lang}/review.json`)
+
+  return {
+    title: dictionary.metaTitle
+  }
+}
 
 export default async function page({params}) {
   const { lang } = await params

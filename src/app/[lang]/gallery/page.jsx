@@ -3,6 +3,14 @@ import OpenImage from './OpenImage'
 import { languages } from '@/config.json'
 import TitleSection from '@/components/TitleSection'
 
+export async function generateMetadata({params: {lang}}) {
+  const dictionary = await import(`@/app/dictionaries/${lang}/gallery.json`)
+
+  return {
+    title: dictionary.title
+  }
+}
+
 export default async function page({params}) {
 
   const paints = await getVisiblePaints()
