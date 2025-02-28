@@ -52,7 +52,7 @@ export default function Footer() {
           {
             socialMedias.map(socialMedia => (
               socialMedia[1].url.length > 0 &&
-              <Link href={socialMedia[1].url} key={socialMedia[1].name} target='_blank' className='flex items-center gap-2 text-background hover:scale-125 duration-200'>
+              <Link href={socialMedia[1].url} key={socialMedia[1].name} target='_blank' className='flex items-center gap-2 text-front-background hover:scale-125 duration-200'>
                 <SelectSocialMediasIcons name={socialMedia[1].name} size={24} />
               </Link>
             ))
