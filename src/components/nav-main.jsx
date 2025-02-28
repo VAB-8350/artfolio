@@ -1,6 +1,6 @@
 "use client"
 
-import { ChevronRight, LayoutDashboard } from "lucide-react";
+import { ChevronRight, Home, LayoutDashboard } from "lucide-react";
 
 import {
   Collapsible,
@@ -17,7 +17,7 @@ import {
   SidebarMenuSubButton,
   SidebarMenuSubItem,
 } from "@/components/ui/sidebar"
-import Link from "next/link";
+import { Link } from 'next-view-transitions'
 import { useSession } from "next-auth/react";
 import { ROLES } from "@/utils/roles";
 
@@ -31,6 +31,14 @@ export function NavMain({
     (<SidebarGroup>
       <SidebarGroupLabel>Panel de administrador</SidebarGroupLabel>
       <SidebarMenu>
+        <SidebarMenuSubItem>
+          <SidebarMenuSubButton asChild>
+            <Link href='/' >
+              <Home /> Go Home
+            </Link>
+          </SidebarMenuSubButton>
+        </SidebarMenuSubItem>
+
         <SidebarMenuSubItem>
           <SidebarMenuSubButton asChild>
             <Link href='/admin' >

@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react'
 import SearchBar from './SearchBar'
 import Menu from './Menu'
-import Link from 'next/link'
+import { Link } from 'next-view-transitions'
 import { usePathname } from 'next/navigation'
 import { languages } from '@/config.json'
 

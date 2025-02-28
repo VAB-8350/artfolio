@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react'
 const { getSocialMedias } = require('@/actions/SocialMedia')
 import { SelectSocialMediasIcons } from "@/components/SocialMediaIcons"
-import Link from 'next/link'
+import { Link } from 'next-view-transitions'
 import useScrollToId from '@/hooks/useScrollToId'
 import { usePathname } from 'next/navigation'
 import { languages } from '@/config.json'

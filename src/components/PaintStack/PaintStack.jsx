@@ -10,7 +10,7 @@ import 'swiper/css/effect-cards';
 
 // import required modules
 import { EffectCards, Autoplay } from 'swiper/modules';
-import Link from 'next/link';
+import { Link } from 'next-view-transitions'
 
 export default function PaintStack({paints}) {
 

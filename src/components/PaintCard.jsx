@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import { Link } from 'next-view-transitions'
 
 export default function PaintCard({paint, lang}) {
 
@@ -7,6 +7,7 @@ export default function PaintCard({paint, lang}) {
       <Link href={(`/${lang}/paint/${paint._id}`)} className="block rounded-lg shadow-xs shadow-indigo-100 group">
         <div className='h-56 w-full rounded-3xl overflow-hidden shadow-md relative'>
           <img
+            loading='lazy'
             alt={lang === 'es' ? paint.titleSpanish : paint.titleEnglish}
             src={paint.images[0].url}
             className='w-full h-full object-cover group-hover:scale-110 transition-transform duration-300'
