@@ -2,7 +2,8 @@ import { getPaint, getPaintsByCategory } from "@/actions/Paint"
 import ImagesOfPaintPage from "@/components/ImagesOfPaintPage/ImagesOfPaintPage"
 import PaintStack from "@/components/PaintStack/PaintStack"
 
-export async function generateMetadata({params: {lang, id}}) {
+export async function generateMetadata({params}) {
+  const { lang, id } = await params
   const paint = await getPaint(id, false)
 
   return {
