@@ -30,6 +30,7 @@ export default async function page({params}) {
               <div className='w-full h-full object-cover rounded-xl mb-5 overflow-hidden shadow-lg hover:shadow-2xl duration-300' key={image.url}>
                 <OpenImage image={image} lang={lang} paint={paint} >
                   <img
+                    loading='lazy'
                     src={image.url}
                     alt={lang === languages.secondary ? paint.titleSpanish : paint.titleEnglish}
                     className='w-full h-full object-cover hover:scale-110 duration-200'
