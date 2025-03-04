@@ -3,7 +3,8 @@ import OpenImage from './OpenImage'
 import { languages } from '@/config.json'
 import TitleSection from '@/components/TitleSection'
 
-export async function generateMetadata({params: {lang}}) {
+export async function generateMetadata({params}) {
+  const { lang } = await params
   const dictionary = await import(`@/app/dictionaries/${lang}/gallery.json`)
 
   return {

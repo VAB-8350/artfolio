@@ -1,7 +1,8 @@
 import { searchPaintings } from "@/actions/Paint"
 import PaintCard from "@/components/PaintCard"
 
-export async function generateMetadata({params: {lang}}) {
+export async function generateMetadata({params}) {
+  const { lang } = await params
 
   return {
     title: lang === 'es' ? 'Listado' : 'List'

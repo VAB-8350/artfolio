@@ -4,7 +4,9 @@ import { getTopPaints } from '@/actions/TopPaints'
 import { getMaxReviews, getQuantityReviews } from "@/actions/Review";
 import { TriangleAlert } from "lucide-react";
 
-export async function generateMetadata({params: {lang}}) {
+export async function generateMetadata({params}) {
+
+  const { lang } = await params
   const dictionary = await import(`@/app/dictionaries/${lang}/review.json`)
 
   return {
