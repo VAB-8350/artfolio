@@ -24,7 +24,7 @@ export default async function HomeComponent({lang}) {
   return (
     <div>
       {/* Presentation */}
-      <Presentation job={dictionary.job} btn={dictionary.contactMe} />
+      <Presentation job={dictionary.job} lang={lang} />
 
       {/* Top Paints & About */}
       <section className='container mx-auto px-5 lg:px-8 flex flex-col gap-16 md:flex-row md:justify-around md:items-center'>

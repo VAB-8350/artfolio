@@ -39,17 +39,23 @@ export default function OpenImage({children, paint, image, lang}) {
 
       <div
         id="background-image"
-        className={`fixed inset-0 w-full h-full p-5 bg-black/30 ${openImage ? 'z-50 opacity-100 blur-0' : '-z-50 opacity-0 blur-3xl'} duration-300 flex justify-center items-center`}
+        className={`fixed inset-0 w-full h-full p-10 bg-black/30 ${openImage ? 'z-50 opacity-100 blur-0' : '-z-50 opacity-0 blur-3xl'} duration-300 flex justify-center items-center`}
       >
         <button onClick={() => setOpenImage(false)} className="absolute right-10 top-10 text-white hover:scale-110 duration-200">
           <CircleX size={40} />
         </button>
 
-        <img
-          src={image.url}
-          alt={lang === languages.secondary ? paint.titleSpanish : paint.titleEnglish}
-          className='max-w-full max-h-full object-contain rounded-xl'
-        />
+          <img
+            src={image.url}
+            alt={lang === languages.secondary ? paint.titleSpanish : paint.titleEnglish}
+            className='max-w-full max-h-full object-contain rounded-xl'
+          />
+
+          <img
+            src={image.url}
+            alt={lang === languages.secondary ? paint.titleSpanish : paint.titleEnglish}
+            className='max-w-full max-h-full object-contain rounded-xl absolute p-10 blur-xl -z-10 opacity-80'
+          />
       </div>
     </>
   )

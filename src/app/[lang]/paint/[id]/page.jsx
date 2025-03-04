@@ -1,4 +1,5 @@
 import { getPaint, getPaintsByCategory } from "@/actions/Paint"
+import ContactMeBTN from "@/components/ContactMeBTN"
 import ImagesOfPaintPage from "@/components/ImagesOfPaintPage/ImagesOfPaintPage"
 import PaintStack from "@/components/PaintStack/PaintStack"
 
@@ -21,33 +22,38 @@ export default async function page({params}) {
   const dictionary = await import(`@/app/dictionaries/${lang}/paint.json`)
 
   return (
-    <div className="min-h-full">
+    <div className="min-h-full lg:mt-20 mt-5">
 
-      <div className="lg:container lg:mx-auto lg:px-8 flex flex-col lg:flex-row">
-        <section className="aspect-square lg:h-[60vh] lg:w-full overflow-hidden">
+      <div className="lg:container lg:mx-auto lg:px-8 flex flex-col lg:grid lg:grid-cols-12 lg:gap-10">
+        <section className="lg:h-[70vh] lg:col-span-8 col-span-12">
           <ImagesOfPaintPage images={paint.images} />
         </section>
 
-        <section className="flex flex-col container mx-auto px-5 lg:px-8 mt-3 lg:w-full">
-          <h1 className="font-niconne text-3xl md:text-6xl font-bold text-front-secondary">
-            {lang === 'es' ? paint.titleSpanish : paint.titleEnglish}
-          </h1>
+        <section className="flex flex-col container mx-auto col-span-12 lg:col-span-4 mt-3 px-5 lg:px-0">
+            <h1 className="font-niconne text-3xl md:text-6xl font-bold text-front-secondary">
+              {lang === 'es' ? paint.titleSpanish : paint.titleEnglish}
+            </h1>
 
-          <div className="flex gap-2 flex-wrap my-3">
-            {
-              paint.categories.map(category => (
-                <span key={category._id} className="text-xs text-front-background bg-front-primary px-3 py-1 rounded-md">
-                  {lang === 'es' ? category.englishName : category.spanishName}
-                </span>
-              ))
-            }
+            <div className="flex gap-2 flex-wrap my-3">
+              {
+                paint.categories.map(category => (
+                  <span key={category._id} className="text-xs text-front-background bg-front-primary px-3 py-1 rounded-md">
+                    {lang === 'es' ? category.englishName : category.spanishName}
+                  </span>
+                ))
+              }
+            </div>
+
+            <p className="font-poppins text-sm text-front-text font-extralight whitespace-pre-line">
+              {lang === 'es' ? paint.descriptionSpanish : paint.descriptionEnglish}
+            </p>
+
+            <span className="self-end text-sm text-front-text mb-5">{paint.year}</span>
+
+            <ContactMeBTN lang={lang} />
+          <div>
+
           </div>
-
-          <p className="font-poppins text-sm text-front-text font-extralight whitespace-pre-line">
-            {lang === 'es' ? paint.descriptionSpanish : paint.descriptionEnglish}
-          </p>
-
-          <span className="self-end text-sm text-front-text">{paint.year}</span>
         </section>
       </div>
 

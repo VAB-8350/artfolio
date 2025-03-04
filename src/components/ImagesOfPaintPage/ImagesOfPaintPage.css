@@ -1,26 +1,8 @@
-#paint-images {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  
-  @media (min-width: 768px) {
-    width: 100%;
-    height: 100%;
-    border-radius: 16px;
-  }
-}
-
 #paint-images .swiper-slide {
   width: 80%;
-
-  @media (min-width: 768px) {
-    width: 100%;
-    height: 100%;
-  }
 }
 
 #paint-images .swiper-slide img {
-  
   aspect-ratio: 1/1;
   object-fit: cover;
 }
@@ -28,7 +10,9 @@
 #paint-images .paint-images-zoom > div {
   width: 100%;
   height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+}
+
+#paint-images .paint-images-zoom > div img {
+  width: 100%;
+  height: 100%;
 }
