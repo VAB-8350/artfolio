@@ -2,7 +2,6 @@ import "./globals.css";
 import { geistSans, geistMono, niconne, poppins } from '@/fonts/fonts'
 import UserPageWrap from "@/components/UserPageWrap/UserPageWrap";
 import { metadataObj } from '@/metadata/metadata'
-import { ViewTransitions } from "next-view-transitions";
 
 const metaObj = await metadataObj('en')
 export const metadata = {
@@ -15,24 +14,22 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <ViewTransitions>
-      <html lang="en" suppressHydrationWarning>
-        <body
-          className={`
-            ${geistSans.variable}
-            ${geistMono.variable}
-            ${niconne.variable}
-            ${poppins.variable}
-            max-w-screen overflow-x-hidden
-          `}
-        >
+    <html lang="en" suppressHydrationWarning>
+      <body
+        className={`
+          ${geistSans.variable}
+          ${geistMono.variable}
+          ${niconne.variable}
+          ${poppins.variable}
+          max-w-screen overflow-x-hidden
+        `}
+      >
 
-        <UserPageWrap>
-          {children}
-        </UserPageWrap>
+      <UserPageWrap>
+        {children}
+      </UserPageWrap>
 
-        </body>
-      </html>
-    </ViewTransitions>
+      </body>
+    </html>
   );
 }

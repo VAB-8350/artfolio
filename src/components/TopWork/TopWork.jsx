@@ -12,7 +12,7 @@ import './TopWork.css';
 
 // import required modules
 import { Autoplay } from 'swiper/modules';
-import { Link } from 'next-view-transitions'
+import Link from 'next/link'
 import { useEffect, useState } from "react";
 
 export default function TopWork({works, lang}) {

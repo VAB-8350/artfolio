@@ -16,7 +16,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
-import { Link } from 'next-view-transitions'
+import Link from 'next/link'
 
 import './menu.css'
 

@@ -17,7 +17,7 @@ import {
   SidebarMenuSubButton,
   SidebarMenuSubItem,
 } from "@/components/ui/sidebar"
-import { Link } from 'next-view-transitions'
+import Link from 'next/link'
 import { useSession } from "next-auth/react";
 import { ROLES } from "@/utils/roles";
 
