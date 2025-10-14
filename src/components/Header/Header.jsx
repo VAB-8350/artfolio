@@ -1,7 +1,7 @@
 'use client'
 import { useEffect, useState } from 'react'
 import SearchBar from './SearchBar'
-import Menu from './Menu'
+import MenuWrapper from './MenuWrapper'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { languages } from '@/config.json'
@@ -33,7 +33,7 @@ export default function header() {
 
       <SearchBar dictionary={dictionary} />
 
-      <Menu dictionary={dictionary} lang={lang} />
+      <MenuWrapper dictionary={dictionary} lang={lang} />
 
       {/* Background */}
       <span className='absolute inset-0 w-full h-full bg-front-primary/80 -z-10 backdrop-blur-sm rounded-b-xl md:rounded-full' />

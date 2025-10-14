@@ -1,4 +1,4 @@
-import Presentation from '@/components/Presentation/Presentation'
+import PresentationWrapper from '@/components/Presentation/PresentationWrapper'
 import PaintStack from '@/components/PaintStack/PaintStack'
 import TitleSection from '@/components/TitleSection'
 import TopWorks from '@/components/TopWork/TopWork'
@@ -24,7 +24,7 @@ export default async function HomeComponent({lang}) {
   return (
     <div>
       {/* Presentation */}
-      <Presentation job={dictionary.job} lang={lang} />
+      <PresentationWrapper job={dictionary.job} lang={lang} />
 
       {/* Top Paints & About */}
       <section className='container mx-auto px-5 lg:px-8 flex flex-col gap-16 md:flex-row md:justify-around md:items-center'>
