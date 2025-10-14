@@ -2,6 +2,7 @@ import "./globals.css";
 import { geistSans, geistMono, niconne, poppins } from '@/fonts/fonts'
 import UserPageWrap from "@/components/UserPageWrap/UserPageWrap";
 import { metadataObj } from '@/metadata/metadata'
+import '@/utils/ClarityInit'
 
 const metaObj = await metadataObj('en')
 export const metadata = {
@@ -13,6 +14,8 @@ export const metadata = {
 }
 
 export default function RootLayout({ children }) {
+
+
   return (
     <html lang="en" suppressHydrationWarning>
       <body
